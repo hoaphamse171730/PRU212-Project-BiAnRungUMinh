@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Movement Config")]
     public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    public float jumpForce = 6.5f;
     public float dampTime = 0.1f; // Smoothing factor for animation transitions
 
     private Animator animator;
