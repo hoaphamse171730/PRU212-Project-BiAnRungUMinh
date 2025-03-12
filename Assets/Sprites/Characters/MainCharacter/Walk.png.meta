@@ -143,12 +143,12 @@ TextureImporter:
       name: Walk_0
       rect:
         serializedVersion: 2
-        x: 41
+        x: 42
         y: 0
-        width: 40
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 38
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,12 +165,12 @@ TextureImporter:
       name: Walk_1
       rect:
         serializedVersion: 2
-        x: 169
+        x: 170
         y: 0
-        width: 39
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 37
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -187,12 +187,12 @@ TextureImporter:
       name: Walk_2
       rect:
         serializedVersion: 2
-        x: 297
+        x: 298
         y: 0
-        width: 35
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 33
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,12 +209,12 @@ TextureImporter:
       name: Walk_3
       rect:
         serializedVersion: 2
-        x: 425
+        x: 426
         y: 0
-        width: 30
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 28
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: Walk_4
       rect:
         serializedVersion: 2
-        x: 553
+        x: 554
         y: 0
-        width: 38
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 36
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -253,12 +253,12 @@ TextureImporter:
       name: Walk_5
       rect:
         serializedVersion: 2
-        x: 681
+        x: 682
         y: 0
-        width: 39
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 37
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -275,12 +275,12 @@ TextureImporter:
       name: Walk_6
       rect:
         serializedVersion: 2
-        x: 809
+        x: 810
         y: 0
-        width: 39
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 37
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -297,12 +297,12 @@ TextureImporter:
       name: Walk_7
       rect:
         serializedVersion: 2
-        x: 937
+        x: 938
         y: 0
-        width: 35
-        height: 65
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 33
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -319,12 +319,12 @@ TextureImporter:
       name: Walk_8
       rect:
         serializedVersion: 2
-        x: 1065
+        x: 1066
         y: 0
-        width: 30
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 28
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -341,12 +341,12 @@ TextureImporter:
       name: Walk_9
       rect:
         serializedVersion: 2
-        x: 1193
+        x: 1194
         y: 0
-        width: 38
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 36
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -363,7 +363,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7373929dc826cc048bd1d30f4022981a
     internalID: 0
     vertices: []
     indices: 

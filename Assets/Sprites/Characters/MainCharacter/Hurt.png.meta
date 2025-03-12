@@ -147,28 +147,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hurt_1
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 47
-        width: 4
-        height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3476ad19262dfc600800000000000000
-      internalID: 490842205202310979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Hurt_2
       rect:
         serializedVersion: 2
@@ -208,28 +186,6 @@ TextureImporter:
       bones: []
       spriteID: ff88d2f14d9b86e40800000000000000
       internalID: 5649970053243570431
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hurt_4
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 41
-        width: 4
-        height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 683152a5dc649daf0800000000000000
-      internalID: -371187646486735994
       vertices: []
       indices: 
       edges: []
