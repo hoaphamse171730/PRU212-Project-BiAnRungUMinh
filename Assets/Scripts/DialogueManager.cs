@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     public Text speakerText; // Optional: to display the speaker's name
     
     private Queue<string> sentences;
-
+    private Dialogue currentDialogue;
     void Awake()
     {
         // Singleton pattern for easy access
@@ -31,6 +31,8 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         dialoguePanel.SetActive(true);
+        currentDialogue = dialogue;
+
         // Optionally display the speaker's name
         if (speakerText != null)
             speakerText.text = dialogue.speaker;
@@ -60,6 +62,14 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         dialoguePanel.SetActive(false);
+
+        if (currentDialogue != null && !string.IsNullOrEmpty(currentDialogue.note))
+        {
+            NotesManager.instance.AddNote(currentDialogue.note);
+        }
+
+        currentDialogue = null; // Clear the reference after finishing
+
     }
 }
 
