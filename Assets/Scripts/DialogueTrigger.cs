@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
+    [SerializeField] private Dialogue dialogue;
 
     // Call this method to trigger the conversation.
     public void TriggerDialogue()
     {
-        DialogueManager.instance.StartDialogue(dialogue);
+        if (DialogueManager.Instance != null)
+        {
+            DialogueManager.Instance.StartDialogue(dialogue);
+        }
     }
 }

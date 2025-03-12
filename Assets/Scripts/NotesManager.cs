@@ -3,15 +3,13 @@ using System.Collections.Generic;
 
 public class NotesManager : MonoBehaviour
 {
-    public static NotesManager instance;
+    public static NotesManager Instance { get; private set; }
+    [SerializeField] private List<string> notes = new List<string>();
 
-    // A list to store unique notes
-    public List<string> notes = new List<string>();
-
-    void Awake()
+    private void Awake()
     {
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(gameObject);
     }
@@ -21,7 +19,7 @@ public class NotesManager : MonoBehaviour
         if (!string.IsNullOrEmpty(note) && !notes.Contains(note))
         {
             notes.Add(note);
-            Debug.Log("Note added: " + note);
+            Debug.Log($"Note added: {note}");
         }
         else
         {
@@ -29,13 +27,12 @@ public class NotesManager : MonoBehaviour
         }
     }
 
-    // Optional: Retrieve all stored notes
     public List<string> GetNotes()
     {
-        return notes;
+        // Return a copy to prevent external modification
+        return new List<string>(notes);
     }
 
-    // Optional: Clear notes if needed
     public void ClearNotes()
     {
         notes.Clear();

@@ -3,9 +3,14 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue
 {
-    public string speaker; // Name of the speaker (NPC, main character, etc.)
+    [SerializeField] private string speaker;
     [TextArea(3, 10)]
-    public string[] sentences; // Multiple dialogue lines for the conversation
+    [SerializeField] private string[] sentences;
     [TextArea(3, 10)]
-    public string note;
+    [SerializeField] private string note;
+
+    public string Speaker => speaker;
+    public string[] Sentences => sentences;
+    public string Note => note;
+
 }

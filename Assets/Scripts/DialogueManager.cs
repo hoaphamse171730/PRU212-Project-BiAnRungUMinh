@@ -4,42 +4,39 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager instance;
+    public static DialogueManager Instance { get; private set; }
 
-    // Assign these in the Inspector
-    public GameObject dialoguePanel;
-    public Text dialogueText;
-    public Text speakerText; // Optional: to display the speaker's name
-    
-    private Queue<string> sentences;
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private Text dialogueText;
+    [SerializeField] private Text speakerText;
+
+    private Queue<string> sentences = new Queue<string>();
     private Dialogue currentDialogue;
-    void Awake()
+
+    public bool IsDialogueActive => dialoguePanel && dialoguePanel.activeSelf;
+
+    private void Awake()
     {
-        // Singleton pattern for easy access
-        if (instance == null)
-            instance = this;
+        if (Instance == null)
+            Instance = this;
         else
             Destroy(gameObject);
 
-        // Ensure the panel is hidden initially
-        dialoguePanel.SetActive(false);
-        sentences = new Queue<string>();
-
+        if (dialoguePanel)
+            dialoguePanel.SetActive(false);
     }
-
 
     public void StartDialogue(Dialogue dialogue)
     {
-        dialoguePanel.SetActive(true);
         currentDialogue = dialogue;
+        if (dialoguePanel)
+            dialoguePanel.SetActive(true);
 
-        // Optionally display the speaker's name
         if (speakerText != null)
-            speakerText.text = dialogue.speaker;
+            speakerText.text = dialogue.Speaker;
 
         sentences.Clear();
-
-        foreach (string sentence in dialogue.sentences)
+        foreach (string sentence in dialogue.Sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -55,22 +52,19 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;
+        dialogueText.text = sentences.Dequeue();
     }
 
     public void EndDialogue()
     {
-        dialoguePanel.SetActive(false);
+        if (dialoguePanel)
+            dialoguePanel.SetActive(false);
 
-        if (currentDialogue != null && !string.IsNullOrEmpty(currentDialogue.note))
+        if (currentDialogue != null && !string.IsNullOrEmpty(currentDialogue.Note))
         {
-            NotesManager.instance.AddNote(currentDialogue.note);
+            NotesManager.Instance.AddNote(currentDialogue.Note);
         }
 
-        currentDialogue = null; // Clear the reference after finishing
-
+        currentDialogue = null;
     }
 }
-
-
