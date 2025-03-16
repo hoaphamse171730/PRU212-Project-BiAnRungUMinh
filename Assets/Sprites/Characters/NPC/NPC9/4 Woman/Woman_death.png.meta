@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Woman_death_0: 7243376287482592045
+      Woman_death_1: 5074957846309975608
+      Woman_death_2: 1961558383674890002
+      Woman_death_3: -1817443459792615092
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
