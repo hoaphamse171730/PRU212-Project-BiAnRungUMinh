@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 32447ad34fe55184ab6438c47730d9f6
+guid: cbc6a9570445e1946b6d0f830685e54d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2649847697073447219
-    second: Dead_0
+      213: -4099886395039319286
+    second: BrownSpider_hurt_0
   - first:
-      213: -8293461521501190705
-    second: Dead_1
+      213: 740957944101289968
+    second: BrownSpider_hurt_1
+  - first:
+      213: -8102355555771469939
+    second: BrownSpider_hurt_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dead_0
+      name: BrownSpider_hurt_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 14
         y: 0
-        width: 85
-        height: 51
+        width: 42
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +134,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33123f4e07626c420800000000000000
-      internalID: 2649847697073447219
+      spriteID: a0b793cbb074a17c0800000000000000
+      internalID: -4099886395039319286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_1
+      name: BrownSpider_hurt_1
       rect:
         serializedVersion: 2
-        x: 146
+        x: 71
         y: 0
-        width: 91
-        height: 23
+        width: 41
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +156,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc50d84dfa4b7ec80800000000000000
-      internalID: -8293461521501190705
+      spriteID: 0ff39ab0359684a00800000000000000
+      internalID: 740957944101289968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrownSpider_hurt_2
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 46
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f2456dc86ae8f80800000000000000
+      internalID: -8102355555771469939
       vertices: []
       indices: 
       edges: []
@@ -173,8 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dead_0: 2649847697073447219
-      Dead_1: -8293461521501190705
+      BrownSpider_hurt_0: -4099886395039319286
+      BrownSpider_hurt_1: 740957944101289968
+      BrownSpider_hurt_2: -8102355555771469939
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

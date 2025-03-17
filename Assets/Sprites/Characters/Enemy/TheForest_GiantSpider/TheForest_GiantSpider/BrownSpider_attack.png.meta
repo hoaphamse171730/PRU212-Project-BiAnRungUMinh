@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: 66adc76cfcd3133498f2985905678672
+guid: 314c1587f4f45e24599a24bf89eca3b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8915327726919978405
-    second: Attack_1_0
+      213: -3011617636742897001
+    second: BrownSpider_attack_0
   - first:
-      213: 4416717768442454902
-    second: Attack_1_1
+      213: 5918262026072313343
+    second: BrownSpider_attack_1
   - first:
-      213: -8053095777402275025
-    second: Attack_1_2
+      213: -6110599739882382891
+    second: BrownSpider_attack_2
   - first:
-      213: 4688295478533005478
-    second: Attack_1_3
+      213: -7612000269374993008
+    second: BrownSpider_attack_3
   - first:
-      213: 3156989228384878200
-    second: Attack_1_4
+      213: -8514504491120254538
+    second: BrownSpider_attack_4
   - first:
-      213: -4176445809780997858
-    second: Attack_1_5
+      213: 4769704792661451310
+    second: BrownSpider_attack_5
+  - first:
+      213: -1143017620775340813
+    second: BrownSpider_attack_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -66,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -128,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_1_0
+      name: BrownSpider_attack_0
       rect:
         serializedVersion: 2
-        x: 22
+        x: 12
         y: 0
-        width: 88
-        height: 76
+        width: 42
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b527eb4faa4664480800000000000000
-      internalID: -8915327726919978405
+      spriteID: 79263a237b59436d0800000000000000
+      internalID: -3011617636742897001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_1
+      name: BrownSpider_attack_1
       rect:
         serializedVersion: 2
-        x: 151
+        x: 67
         y: 0
-        width: 82
-        height: 85
+        width: 45
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6732b2dd8655b4d30800000000000000
-      internalID: 4416717768442454902
+      spriteID: ffd49b7d4f3e12250800000000000000
+      internalID: 5918262026072313343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_2
+      name: BrownSpider_attack_2
       rect:
         serializedVersion: 2
-        x: 282
+        x: 125
         y: 0
-        width: 79
-        height: 87
+        width: 42
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2b3dbdbe08ad3090800000000000000
-      internalID: -8053095777402275025
+      spriteID: 5d957b379e9c23ba0800000000000000
+      internalID: -6110599739882382891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_3
+      name: BrownSpider_attack_3
       rect:
         serializedVersion: 2
-        x: 408
+        x: 182
         y: 0
-        width: 70
-        height: 90
+        width: 41
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +212,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a0a708e5eb201140800000000000000
-      internalID: 4688295478533005478
+      spriteID: 09dc9b9c51ebc5690800000000000000
+      internalID: -7612000269374993008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_4
+      name: BrownSpider_attack_4
       rect:
         serializedVersion: 2
-        x: 541
+        x: 235
         y: 0
-        width: 93
-        height: 88
+        width: 45
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87e7d9d0af0efcb20800000000000000
-      internalID: 3156989228384878200
+      spriteID: 6b12f40f64766d980800000000000000
+      internalID: -8514504491120254538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1_5
+      name: BrownSpider_attack_5
       rect:
         serializedVersion: 2
-        x: 674
+        x: 288
         y: 0
-        width: 72
-        height: 85
+        width: 46
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,8 +256,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e11c55ce9a84a06c0800000000000000
-      internalID: -4176445809780997858
+      spriteID: e22601aec35613240800000000000000
+      internalID: 4769704792661451310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrownSpider_attack_6
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 0
+        width: 46
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f47ca5a78f2320f0800000000000000
+      internalID: -1143017620775340813
       vertices: []
       indices: 
       edges: []
@@ -273,12 +298,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Attack_1_0: -8915327726919978405
-      Attack_1_1: 4416717768442454902
-      Attack_1_2: -8053095777402275025
-      Attack_1_3: 4688295478533005478
-      Attack_1_4: 3156989228384878200
-      Attack_1_5: -4176445809780997858
+      BrownSpider_attack_0: -3011617636742897001
+      BrownSpider_attack_1: 5918262026072313343
+      BrownSpider_attack_2: -6110599739882382891
+      BrownSpider_attack_3: -7612000269374993008
+      BrownSpider_attack_4: -8514504491120254538
+      BrownSpider_attack_5: 4769704792661451310
+      BrownSpider_attack_6: -1143017620775340813
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

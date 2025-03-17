@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 32447ad34fe55184ab6438c47730d9f6
+guid: 06149079ad25f1345aaa9d9b81538607
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2649847697073447219
-    second: Dead_0
+      213: 1161868020513763272
+    second: BlackSpider_walk_0
   - first:
-      213: -8293461521501190705
-    second: Dead_1
+      213: 8290101133767849651
+    second: BlackSpider_walk_1
+  - first:
+      213: 6185381395509749301
+    second: BlackSpider_walk_2
+  - first:
+      213: -2925167614911221377
+    second: BlackSpider_walk_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -116,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dead_0
+      name: BlackSpider_walk_0
       rect:
         serializedVersion: 2
-        x: 18
+        x: 12
         y: 0
-        width: 85
-        height: 51
+        width: 42
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 33123f4e07626c420800000000000000
-      internalID: 2649847697073447219
+      spriteID: 8cfeb9e0fc8cf1010800000000000000
+      internalID: 1161868020513763272
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_1
+      name: BlackSpider_walk_1
       rect:
         serializedVersion: 2
-        x: 146
+        x: 68
         y: 0
-        width: 91
-        height: 23
+        width: 41
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +159,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc50d84dfa4b7ec80800000000000000
-      internalID: -8293461521501190705
+      spriteID: 3b6bb4eee0b5c0370800000000000000
+      internalID: 8290101133767849651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackSpider_walk_2
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 0
+        width: 43
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5362baf8b93e6d550800000000000000
+      internalID: 6185381395509749301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlackSpider_walk_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 42
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f717dbc6d87b767d0800000000000000
+      internalID: -2925167614911221377
       vertices: []
       indices: 
       edges: []
@@ -173,8 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dead_0: 2649847697073447219
-      Dead_1: -8293461521501190705
+      BlackSpider_walk_0: 1161868020513763272
+      BlackSpider_walk_1: 8290101133767849651
+      BlackSpider_walk_2: 6185381395509749301
+      BlackSpider_walk_3: -2925167614911221377
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
