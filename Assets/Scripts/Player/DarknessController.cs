@@ -23,6 +23,10 @@ public class DarknessController : MonoBehaviour
     [Tooltip("How fast the twitch effect oscillates.")]
     public float twitchFrequency = 2f;
 
+    [Tooltip("Multiply the drain rate when in a danger zone.")]
+    public float dangerDrainMultiplier = 2f;
+    private bool isDanger = false;
+
     private bool isPlayerDeadFromDarkness = false;
     private bool isSafe = false;  // When true, light drain is paused and light regenerates
 
@@ -43,8 +47,15 @@ public class DarknessController : MonoBehaviour
         }
         else
         {
-            currentLightRadius -= lightDrainRate * Time.deltaTime;
+            // Apply danger multiplier if danger mode is active.
+            float drainRate = lightDrainRate;
+            if (isDanger)
+            {
+                drainRate *= dangerDrainMultiplier;
+            }
+            currentLightRadius -= drainRate * Time.deltaTime;
         }
+
         currentLightRadius = Mathf.Clamp(currentLightRadius, minLightRadius, maxLightRadius);
 
         // Update the darkness sprite scale to match the current light radius.
@@ -86,6 +97,12 @@ public class DarknessController : MonoBehaviour
     public void SetSafe(bool safeState)
     {
         isSafe = safeState;
+    }
+
+    // Toggle danger mode (increasing the drain rate)
+    public void SetDanger(bool dangerState)
+    {
+        isDanger = dangerState;
     }
 
     // External call to restore light immediately (e.g., from torches, NPCs, or items).
