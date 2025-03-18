@@ -26660,8 +26660,11 @@ MonoBehaviour:
   offset: {x: 0, y: 1.2}
   maxLightRadius: 50
   minLightRadius: 2.7
-  lightDrainRate: 2
-  lightRestoreRate: 10
+  lightDrainRate: 6
+  lightRestoreRate: 20
+  enableTwitch: 1
+  twitchAmplitude: 1
+  twitchFrequency: 5
   dangerDrainMultiplier: 3
 --- !u!1 &1015387672
 GameObject:
