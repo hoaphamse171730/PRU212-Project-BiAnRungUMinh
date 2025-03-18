@@ -26632,7 +26632,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 100
   m_Sprite: {fileID: 2777577987146415741, guid: 5f262b8ac69789d45a83537f4cbe97ae, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.99607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -26661,6 +26661,9 @@ MonoBehaviour:
   minLightRadius: 2.7
   lightDrainRate: 10
   lightRestoreRate: 15
+  enableTwitch: 1
+  twitchAmplitude: 1
+  twitchFrequency: 5
 --- !u!1 &1015387672
 GameObject:
   m_ObjectHideFlags: 0
@@ -28821,7 +28824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6592258632144677710, guid: cf632e10611f68c41a6e5378b73aba29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.1
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 6592258632144677710, guid: cf632e10611f68c41a6e5378b73aba29, type: 3}
       propertyPath: m_LocalPosition.z
