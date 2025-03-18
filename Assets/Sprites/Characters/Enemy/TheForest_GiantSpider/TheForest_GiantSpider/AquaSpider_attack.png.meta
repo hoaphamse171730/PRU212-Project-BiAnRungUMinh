@@ -1,40 +1,28 @@
 fileFormatVersion: 2
-guid: 30e4d8e6f79edb141a27ea338ea5962c
+guid: 6b5167dbeff494d48b694190f5705951
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6188768998144020764
-    second: Idle_2_0
+      213: 6462466150754251002
+    second: AquaSpider_attack_0
   - first:
-      213: 8893443453730532091
-    second: Idle_2_1
+      213: -8700579296334461966
+    second: AquaSpider_attack_1
   - first:
-      213: -2638866428267449571
-    second: Idle_2_2
+      213: -2372621021246877314
+    second: AquaSpider_attack_2
   - first:
-      213: 8150759692636176867
-    second: Idle_2_3
+      213: -2404050011584262080
+    second: AquaSpider_attack_3
   - first:
-      213: 7579204882187213897
-    second: Idle_2_4
+      213: -6001626257686482757
+    second: AquaSpider_attack_4
   - first:
-      213: -5366198773294189
-    second: Idle_2_5
+      213: 3613776721958207192
+    second: AquaSpider_attack_5
   - first:
-      213: 789186541819579165
-    second: Idle_2_6
-  - first:
-      213: 6601435321489166827
-    second: Idle_2_7
-  - first:
-      213: 8295018443228217620
-    second: Idle_2_8
-  - first:
-      213: -7230391701638731982
-    second: Idle_2_9
-  - first:
-      213: -1917972503027654631
-    second: Idle_2_10
+      213: -8105681725237860885
+    second: AquaSpider_attack_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -81,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -143,13 +131,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_2_0
+      name: AquaSpider_attack_0
       rect:
         serializedVersion: 2
-        x: 47
+        x: 12
         y: 0
         width: 42
-        height: 67
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4eeecacb2631d1aa0800000000000000
-      internalID: -6188768998144020764
+      spriteID: af071b879ba4fa950800000000000000
+      internalID: 6462466150754251002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2_1
+      name: AquaSpider_attack_1
       rect:
         serializedVersion: 2
-        x: 175
+        x: 67
         y: 0
-        width: 41
-        height: 67
+        width: 45
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bfaa1a1a3bbdb6b70800000000000000
-      internalID: 8893443453730532091
+      spriteID: 2f3cdd54a35514780800000000000000
+      internalID: -8700579296334461966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2_2
+      name: AquaSpider_attack_2
       rect:
         serializedVersion: 2
-        x: 303
+        x: 125
         y: 0
         width: 42
-        height: 67
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,174 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d133a6df6fcd06bd0800000000000000
-      internalID: -2638866428267449571
+      spriteID: e7194f970c1c21fd0800000000000000
+      internalID: -2372621021246877314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2_3
+      name: AquaSpider_attack_3
       rect:
         serializedVersion: 2
-        x: 431
-        y: 0
-        width: 38
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e1c62181c05d1170800000000000000
-      internalID: 8150759692636176867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_2_4
-      rect:
-        serializedVersion: 2
-        x: 559
-        y: 0
-        width: 39
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94cdcaa1faebe2960800000000000000
-      internalID: 7579204882187213897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_2_5
-      rect:
-        serializedVersion: 2
-        x: 687
-        y: 0
-        width: 38
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 39bd25c787feceff0800000000000000
-      internalID: -5366198773294189
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_2_6
-      rect:
-        serializedVersion: 2
-        x: 815
-        y: 0
-        width: 38
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d1bccae7af0c3fa00800000000000000
-      internalID: 789186541819579165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_2_7
-      rect:
-        serializedVersion: 2
-        x: 943
-        y: 0
-        width: 38
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: be11411f2720d9b50800000000000000
-      internalID: 6601435321489166827
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_2_8
-      rect:
-        serializedVersion: 2
-        x: 1071
-        y: 0
-        width: 38
-        height: 74
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4118ee14353dd1370800000000000000
-      internalID: 8295018443228217620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_2_9
-      rect:
-        serializedVersion: 2
-        x: 1199
-        y: 0
-        width: 39
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23724ec3e0d78ab90800000000000000
-      internalID: -7230391701638731982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_2_10
-      rect:
-        serializedVersion: 2
-        x: 1327
+        x: 182
         y: 0
         width: 41
-        height: 67
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,8 +212,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 910e11c9b2ef165e0800000000000000
-      internalID: -1917972503027654631
+      spriteID: 0401f3d604913aed0800000000000000
+      internalID: -2404050011584262080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AquaSpider_attack_4
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 0
+        width: 45
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0b0f377b0f5bca0800000000000000
+      internalID: -6001626257686482757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AquaSpider_attack_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 46
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8def4e138c6b62230800000000000000
+      internalID: 3613776721958207192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AquaSpider_attack_6
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 0
+        width: 46
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be562d8aa65d28f80800000000000000
+      internalID: -8105681725237860885
       vertices: []
       indices: 
       edges: []
@@ -398,17 +298,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Idle_2_0: -6188768998144020764
-      Idle_2_1: 8893443453730532091
-      Idle_2_10: -1917972503027654631
-      Idle_2_2: -2638866428267449571
-      Idle_2_3: 8150759692636176867
-      Idle_2_4: 7579204882187213897
-      Idle_2_5: -5366198773294189
-      Idle_2_6: 789186541819579165
-      Idle_2_7: 6601435321489166827
-      Idle_2_8: 8295018443228217620
-      Idle_2_9: -7230391701638731982
+      AquaSpider_attack_0: 6462466150754251002
+      AquaSpider_attack_1: -8700579296334461966
+      AquaSpider_attack_2: -2372621021246877314
+      AquaSpider_attack_3: -2404050011584262080
+      AquaSpider_attack_4: -6001626257686482757
+      AquaSpider_attack_5: 3613776721958207192
+      AquaSpider_attack_6: -8105681725237860885
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
