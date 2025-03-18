@@ -16,6 +16,8 @@ public class NotesUI : MonoBehaviour
 
     public void ToggleNotesPanel()
     {
+        Debug.Log("ToggleNotesPanel called in scene: " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+
         if (notesPanel == null)
         {
             Debug.LogWarning("NotesPanel is not assigned.");
@@ -23,13 +25,19 @@ public class NotesUI : MonoBehaviour
         }
 
         bool isActive = notesPanel.activeSelf;
+        Debug.Log("NotesPanel active state before toggle: " + isActive);
+
         notesPanel.SetActive(!isActive);
 
         if (!isActive)
         {
+            Debug.Log("Panel activated, updating notes UI...");
             UpdateNotesUI();
         }
+
+        Debug.Log("NotesPanel active state after toggle: " + !isActive);
     }
+
 
     private void UpdateNotesUI()
     {
