@@ -10,7 +10,7 @@ public class EndpointTrigger : MonoBehaviour
         sceneTransitionManager = FindFirstObjectByType<SceneTransitionManager>();
         if (sceneTransitionManager == null)
         {
-            Debug.LogError("SceneTransitionManager not found in the scene!");
+           
         }
     }
 

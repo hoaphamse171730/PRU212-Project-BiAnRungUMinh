@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DarknessController : MonoBehaviour
@@ -29,7 +30,11 @@ public class DarknessController : MonoBehaviour
 
     private bool isPlayerDeadFromDarkness = false;
     private bool isSafe = false;  // When true, light drain is paused and light regenerates
-
+    
+    
+    
+    
+    
     private void Start()
     {
         // Start with full "vision"
@@ -86,6 +91,7 @@ public class DarknessController : MonoBehaviour
         {
             PlayerController pc = player.GetComponent<PlayerController>();
             if (pc != null && !pc.IsDead)
+
             {
                 pc.TakeDamage(9999); // Enough to kill the player.
                 isPlayerDeadFromDarkness = true;
@@ -112,4 +118,11 @@ public class DarknessController : MonoBehaviour
         if (currentLightRadius > maxLightRadius)
             currentLightRadius = maxLightRadius;
     }
+
+
+
+    
+
+
+
 }

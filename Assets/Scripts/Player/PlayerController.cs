@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,24 +11,39 @@ public class PlayerController : MonoBehaviour
     [Header("Health Config")]
     [SerializeField] private int maxHealth = 100;
     private int currentHealth;
-    private bool isDead = false;
+    public bool IsDead = false;
+
+    public bool isDead
+    {
+        get { return IsDead; }
+    }
+
+
 
     private Animator animator;
     private Rigidbody2D rb;
     private bool isGrounded = false;
     private SpriteRenderer spriteRenderer;
 
+    private AudioSource footstepAudioSource;
+    [Header("Audio Config")]
+    [SerializeField] private AudioClip walkingClip;  // Âm thanh khi đi bộ
+    [SerializeField] private AudioClip runningClip;  // Âm thanh khi chạy
+    [SerializeField] private float stepInterval = 0.5f;
+    private float stepTimer;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        footstepAudioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
     }
 
     private void Update()
     {
-        if (isDead) return;
+        if (IsDead) return;
 
         HandleMovement();
         HandleJump();
@@ -47,7 +62,31 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", animationSpeed, dampTime, Time.deltaTime);
         animator.SetBool("isRunning", isRunning && Mathf.Abs(moveInput) > 0.1f);
 
-        // Flip sprite based on direction
+        // Phát âm thanh khi nhân vật di chuyển
+        if (Mathf.Abs(moveInput) > 0.1f && isGrounded)
+        {
+            if (!footstepAudioSource.isPlaying)
+            {
+                if (isRunning)
+                {
+                    PlayRunningSound();
+                }
+                else
+                {
+                    PlayWalkingSound();
+                }
+            }
+        }
+        else
+        {
+            // Dừng âm thanh khi nhân vật đứng yên
+            if (footstepAudioSource.isPlaying)
+            {
+                footstepAudioSource.Stop();
+            }
+        }
+
+        // Lật hướng sprite dựa trên hướng di chuyển
         spriteRenderer.flipX = moveInput < 0;
     }
 
@@ -83,10 +122,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            isDead = true;
+            IsDead = true;
             animator.SetTrigger("Dead");
             rb.linearVelocity = Vector2.zero;
-            // Additional logic on death (e.g., disabling components) can be added here.
         }
     }
 
@@ -106,9 +144,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public bool IsDead
+    private void PlayWalkingSound()
     {
-        get { return isDead; }
+        if (walkingClip != null && footstepAudioSource != null)
+        {
+            footstepAudioSource.clip = walkingClip;
+            footstepAudioSource.Play();
+        }
     }
 
+    private void PlayRunningSound()
+    {
+        if (runningClip != null && footstepAudioSource != null)
+        {
+            footstepAudioSource.clip = runningClip;
+            footstepAudioSource.Play();
+        }
+    }
+
+
+    
 }
