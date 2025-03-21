@@ -105,4 +105,10 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    public bool IsDead
+    {
+        get { return isDead; }
+    }
+
 }
