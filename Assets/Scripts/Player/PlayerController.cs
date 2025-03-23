@@ -18,6 +18,11 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded = false;
     private SpriteRenderer spriteRenderer;
 
+    // Input variables captured in Update()
+    private float moveInput;
+    private bool jumpInput;
+    private bool isRunning;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,19 +35,27 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) return;
 
-        HandleMovement();
-        HandleJump();
-        HandleDamageInput();
-    }
+        // Capture movement input
+        moveInput = Input.GetAxis("Horizontal");
+        isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
 
-    private void HandleMovement()
-    {
-        float moveInput = Input.GetAxis("Horizontal");
-        bool isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-        float currentSpeed = isRunning ? moveSpeed * runMultiplier : moveSpeed;
+        // Capture jump input
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        {
+            jumpInput = true;
+        }
 
-        rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);
+        // Handle damage input
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            TakeDamage(10);
+        }
+        else if (Input.GetKeyDown(KeyCode.K))
+        {
+            TakeDamage(100);
+        }
 
+        // Update animations (can remain in Update for smoother visuals)
         float animationSpeed = Mathf.Abs(moveInput) * (isRunning ? runMultiplier : 1f);
         animator.SetFloat("Speed", animationSpeed, dampTime, Time.deltaTime);
         animator.SetBool("isRunning", isRunning && Mathf.Abs(moveInput) > 0.1f);
@@ -51,23 +64,19 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.flipX = moveInput < 0;
     }
 
-    private void HandleJump()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        if (isDead) return;
+
+        // Apply horizontal movement physics
+        float currentSpeed = isRunning ? moveSpeed * runMultiplier : moveSpeed;
+        rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);
+
+        // Apply jump physics if jump was pressed
+        if (jumpInput)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        }
-    }
-
-    private void HandleDamageInput()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(10);
-        }
-        else if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(100);
+            jumpInput = false; // Reset jump input after applying it
         }
     }
 
@@ -108,7 +117,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsDead
     {
-        get { return isDead; }
+    
+            get { return isDead; }
+        }
     }
-
-}
