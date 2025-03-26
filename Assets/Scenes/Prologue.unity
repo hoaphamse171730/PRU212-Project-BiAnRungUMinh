@@ -26743,6 +26743,37 @@ MonoBehaviour:
   flickerDuration: 0.1
   flickerIntervalMin: 0.2
   flickerIntervalMax: 0.5
+--- !u!1 &1066997573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1066997574}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: SpawnPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1066997574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066997573}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8, y: -23.3, z: -1.3846788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1097935632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28815,42 +28846,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 715996594}
     m_Modifications:
-    - target: {fileID: 323005546182084353, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_FontData.m_BestFit
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916435597256870322, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916435597256870322, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 2916435597256870322, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916435597256870322, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916435597256870322, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916435597256870322, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916435597256870322, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5232871397264648531, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5998187211098399583, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -28935,10 +28930,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TalkPrompt
       objectReference: {fileID: 0}
-    - target: {fileID: 7874271723626780042, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28969,3 +28960,4 @@ SceneRoots:
   - {fileID: 2175227169928909477}
   - {fileID: 7239423055878745399}
   - {fileID: 1430765472}
+  - {fileID: 1066997574}

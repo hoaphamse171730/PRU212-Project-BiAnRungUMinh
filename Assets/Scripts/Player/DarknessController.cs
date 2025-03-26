@@ -114,4 +114,14 @@ public class DarknessController : MonoBehaviour
         if (currentLightRadius > maxLightRadius)
             currentLightRadius = maxLightRadius;
     }
+    public void ResetLight()
+    {
+        currentLightRadius = maxLightRadius;
+        isPlayerDeadFromDarkness = false;
+        if (darknessLight != null)
+        {
+            darknessLight.pointLightOuterRadius = currentLightRadius;
+        }
+    }
+
 }
