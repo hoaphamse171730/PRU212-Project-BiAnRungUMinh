@@ -68,6 +68,8 @@ public class DialogueManager : MonoBehaviour
 
         if (decisionPanel == null)
             decisionPanel = GameObject.Find("DecisionPanel");
+            decisionPanel.SetActive(false);
+
         if (decisionPanel != null)
         {
             if (decisionContainer == null)
