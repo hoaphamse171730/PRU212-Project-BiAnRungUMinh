@@ -2,32 +2,36 @@ using UnityEngine;
 
 public class SafeZone : MonoBehaviour
 {
-    // This script expects the GameObject to have a 2D Collider (set as Trigger).
+    // Public number to adjust the light restoration multiplier in this SafeZone.
+    public float safeLightRestoreMultiplier = 1.0f;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the collider belongs to the player (ensure your Player GameObject is tagged "Player").
+        // Check if the collider belongs to the player.
         if (other.CompareTag("Player"))
         {
             // Find the DarknessController in the scene.
             DarknessController darkness = FindObjectOfType<DarknessController>();
             if (darkness != null)
             {
-                darkness.SetSafe(true);
+                // Pass the multiplier to adjust how fast light is restored.
+                darkness.SetSafe(true, safeLightRestoreMultiplier);
             }
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // When the player leaves the safe zone, resume normal light drain.
+        // When the player leaves, reset safe mode.
         if (other.CompareTag("Player"))
         {
             DarknessController darkness = FindObjectOfType<DarknessController>();
             if (darkness != null)
             {
+                // Reset safe mode; multiplier will default to 1.
                 darkness.SetSafe(false);
             }
         }
     }
 }
+

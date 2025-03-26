@@ -909,6 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39824eb352afdd40b25d2a155723ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  safeLightRestoreMultiplier: 0.7
 --- !u!61 &496910669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48188,6 +48189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39824eb352afdd40b25d2a155723ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  safeLightRestoreMultiplier: 1
 --- !u!114 &694838356
 MonoBehaviour:
   m_ObjectHideFlags: 0
