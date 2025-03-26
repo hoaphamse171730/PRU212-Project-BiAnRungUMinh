@@ -819,18 +819,6 @@ PrefabInstance:
       value: -330.97385
       objectReference: {fileID: 0}
     - target: {fileID: 411448420525663772, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 411448420525663772, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 411448420525663772, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 411448420525663772, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -878,53 +866,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3818695002055661914, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5585904185305361321, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 5585904185305361321, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5585904185305361321, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5585904185305361321, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_FontData.m_Alignment
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5982451588702225983, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -138.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6836216556900349524, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_FontData.m_BestFit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6836216556900349524, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8531745097240777705, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 68.6
-      objectReference: {fileID: 0}
     - target: {fileID: 8647173298881325429, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
       propertyPath: m_Name
       value: DialogueBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202704791215425611, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 124.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 9202704791215425611, guid: 3895dfa9487883743a341a9ba9575531, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -280.57
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -48932,10 +48876,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecisionPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 122099151474300371, guid: 38beccd19da69554b9dc448287e4f5a6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5966744108194779747, guid: 38beccd19da69554b9dc448287e4f5a6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -48967,18 +48907,6 @@ PrefabInstance:
     - target: {fileID: 5966744108194779747, guid: 38beccd19da69554b9dc448287e4f5a6, type: 3}
       propertyPath: m_SizeDelta.y
       value: 694
-      objectReference: {fileID: 0}
-    - target: {fileID: 5966744108194779747, guid: 38beccd19da69554b9dc448287e4f5a6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5966744108194779747, guid: 38beccd19da69554b9dc448287e4f5a6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5966744108194779747, guid: 38beccd19da69554b9dc448287e4f5a6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5966744108194779747, guid: 38beccd19da69554b9dc448287e4f5a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51120,18 +51048,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 715996594}
     m_Modifications:
-    - target: {fileID: 1618503453127462666, guid: bbb13a61cad6f6042bc406d53915e683, type: 3}
-      propertyPath: m_FontData.m_BestFit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1618503453127462666, guid: bbb13a61cad6f6042bc406d53915e683, type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1618503453127462666, guid: bbb13a61cad6f6042bc406d53915e683, type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4912009966545670955, guid: bbb13a61cad6f6042bc406d53915e683, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -51163,18 +51079,6 @@ PrefabInstance:
     - target: {fileID: 4912009966545670955, guid: bbb13a61cad6f6042bc406d53915e683, type: 3}
       propertyPath: m_SizeDelta.y
       value: -77.275024
-      objectReference: {fileID: 0}
-    - target: {fileID: 4912009966545670955, guid: bbb13a61cad6f6042bc406d53915e683, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4912009966545670955, guid: bbb13a61cad6f6042bc406d53915e683, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4912009966545670955, guid: bbb13a61cad6f6042bc406d53915e683, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4912009966545670955, guid: bbb13a61cad6f6042bc406d53915e683, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52854,18 +52758,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToggleNotesButton
       objectReference: {fileID: 0}
-    - target: {fileID: 6723983616756138880, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6723983616756138880, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4614197516923560846, guid: 7981177579f6741449636b6ee316745c, type: 3}
-    - target: {fileID: 6723983616756138880, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleNotesPanel
-      objectReference: {fileID: 0}
     - target: {fileID: 9077227148809996757, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -52897,18 +52789,6 @@ PrefabInstance:
     - target: {fileID: 9077227148809996757, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
       propertyPath: m_SizeDelta.y
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 9077227148809996757, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.93896204
-      objectReference: {fileID: 0}
-    - target: {fileID: 9077227148809996757, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.93896204
-      objectReference: {fileID: 0}
-    - target: {fileID: 9077227148809996757, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.93896204
       objectReference: {fileID: 0}
     - target: {fileID: 9077227148809996757, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
       propertyPath: m_LocalPosition.x

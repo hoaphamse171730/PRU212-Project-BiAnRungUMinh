@@ -26070,6 +26070,64 @@ MonoBehaviour:
   player: {fileID: 7142293256366781602}
   parallaxFactor: 1
   followSpeed: 20
+--- !u!1 &580004316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 580004318}
+  - component: {fileID: 580004317}
+  m_Layer: 0
+  m_Name: SceneSelector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &580004317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580004316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bedd65a1a06cb44c8c4d2013c82ad1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenes:
+  - MainMenu
+  - Prologue
+  - Chapter_1
+  - Chapter_2
+  - Chapter_3
+  - Chapter_4
+  - BadEnding
+  - OpenEnding
+  - EndMenu
+  - DeadScene
+  buttonWidth: 50
+  buttonHeight: 50
+  spacing: 10
+--- !u!4 &580004318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580004316}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 49.098526, y: -22.757967, z: -0.039956376}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &603382830
 GameObject:
   m_ObjectHideFlags: 0
@@ -28961,3 +29019,4 @@ SceneRoots:
   - {fileID: 7239423055878745399}
   - {fileID: 1430765472}
   - {fileID: 1066997574}
+  - {fileID: 580004318}
