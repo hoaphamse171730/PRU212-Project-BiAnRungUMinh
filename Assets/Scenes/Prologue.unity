@@ -529,6 +529,10 @@ PrefabInstance:
       value: ToggleNotesButton
       objectReference: {fileID: 0}
     - target: {fileID: 6723983616756138880, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6723983616756138880, guid: abdfe2816591e8b41b1118c393cd6819, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 397052766}
@@ -26377,7 +26381,7 @@ Transform:
   m_GameObject: {fileID: 692208289}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.95, y: -5.96, z: -0.0093930755}
+  m_LocalPosition: {x: 82.3, y: -6.1, z: -0.0093930755}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28649,7 +28653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6592258632144677710, guid: cf632e10611f68c41a6e5378b73aba29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.33
+      value: 99.1
       objectReference: {fileID: 0}
     - target: {fileID: 6592258632144677710, guid: cf632e10611f68c41a6e5378b73aba29, type: 3}
       propertyPath: m_LocalPosition.y

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -33,6 +34,50 @@ public class DialogueManager : MonoBehaviour
             dialoguePanel.SetActive(false);
         if (decisionPanel)
             decisionPanel.SetActive(false);
+    }
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    // Called when a new scene is loaded.
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (dialoguePanel == null)
+            dialoguePanel = GameObject.Find("DialogueBox");
+            dialoguePanel.SetActive(false);
+        if (speakerText == null)
+        {
+            Transform dialogueTransform = dialoguePanel.transform.Find("DialogueText");
+
+            if (dialogueTransform != null)
+                dialogueText = dialogueTransform.GetComponent<Text>();
+            if (speakerText == null)
+            {
+                Transform speakerTransform = dialoguePanel.transform.Find("SpeakerText");
+
+                if (speakerTransform != null)
+                    speakerText = speakerTransform.GetComponent<Text>();
+            }
+        }
+
+        if (decisionPanel == null)
+            decisionPanel = GameObject.Find("DecisionPanel");
+        if (decisionPanel != null)
+        {
+            if (decisionContainer == null)
+            {
+                Transform container = decisionPanel.transform.Find("DecisionContainer");
+                if (container != null)
+                    decisionContainer = container;
+            }
+        }
+        // decisionButtonPrefab usually remains constant if it’s assigned from your assets.
     }
 
     public void StartDialogue(Dialogue dialogue)

@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
         // Capture movement input
         moveInput = Input.GetAxis("Horizontal");
         isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-
         // Capture jump input
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
