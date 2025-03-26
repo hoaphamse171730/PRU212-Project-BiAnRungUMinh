@@ -770,6 +770,9 @@ GameObject:
   m_Component:
   - component: {fileID: 496910665}
   - component: {fileID: 496910666}
+  - component: {fileID: 496910668}
+  - component: {fileID: 496910667}
+  - component: {fileID: 496910669}
   m_Layer: 0
   m_Name: 2_0 (1)
   m_TagString: Untagged
@@ -847,6 +850,111 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &496910667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496910664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311d85e9f8210b1438a6a55020295d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    speaker: Main
+    sentences:
+    - These relics and tattered expedition logs hint at an ancient reverence for
+      this land
+    note: 
+    choices:
+    - choiceText: Investigate
+      nextDialogue:
+        speaker: Stone
+        sentences:
+        - '"Local tribes once saw this forest as sacred, and human greed might have
+          disturbed its balance"'
+        note: 
+        choices:
+        - choiceText: Hmm?
+          nextDialogue:
+            speaker: Main
+            sentences:
+            - "There\u2019s even a familiar family crest carved into this totem...
+              Could it be connected to my past?"
+            note: 
+            choices:
+            - choiceText: Examine the crest
+              nextDialogue:
+                speaker: Main
+                sentences:
+                - "This crest... it\u2019s identical to the one in my family\u2019s
+                  heirloom. It seems our destiny is bound to this cursed land"
+                note: 
+                choices: []
+              eventID: 
+          eventID: 
+      eventID: 
+  talkPromptUI: {fileID: 0}
+--- !u!114 &496910668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496910664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39824eb352afdd40b25d2a155723ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &496910669
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496910664}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.33460617, y: 0.95441246}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.46875, y: 1.78125}
+    newSize: {x: 1.46875, y: 1.78125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 5.064934, y: 3.690075}
+  m_EdgeRadius: 0
 --- !u!1 &522721067
 GameObject:
   m_ObjectHideFlags: 0
