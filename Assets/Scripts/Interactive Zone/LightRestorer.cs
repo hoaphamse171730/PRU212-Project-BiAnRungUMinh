@@ -1,10 +1,13 @@
 using UnityEngine;
+using System.Collections;
 
 public class LightRestorer : MonoBehaviour
 {
     [Header("Restore Settings")]
-    [Tooltip("How much light to restore when activated.")]
+    [Tooltip("Total amount of light to restore when activated.")]
     public float restoreAmount = 3f;
+    [Tooltip("Duration (in seconds) over which the light is restored.")]
+    public float restoreDuration = 1f;
     [Tooltip("If true, this object will be destroyed after restoring light.")]
     public bool destroyAfterRestore = true;
     [Tooltip("If true, the player must press a key (E) to interact and restore light.")]
@@ -14,6 +17,8 @@ public class LightRestorer : MonoBehaviour
     private DarknessController darknessController;
     // Tracks if the player is within trigger range.
     private bool playerInRange = false;
+    // Flag to ensure restoration starts only once.
+    private bool restorationStarted = false;
 
     private void Start()
     {
@@ -27,12 +32,12 @@ public class LightRestorer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the collider belongs to the player (make sure your Player GameObject has the tag "Player")
+        // Check if the collider belongs to the player.
         if (other.CompareTag("Player"))
         {
             if (!requiresInteraction)
             {
-                RestoreLight();
+                TriggerRestore();
             }
             else
             {
@@ -52,28 +57,61 @@ public class LightRestorer : MonoBehaviour
 
     private void Update()
     {
-        // If interaction is required and the player is in range, listen for the interact key.
-        if (requiresInteraction && playerInRange)
+        // If interaction is required and the player is in range, listen for the "E" key.
+        if (requiresInteraction && playerInRange && !restorationStarted)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                RestoreLight();
+                TriggerRestore();
             }
         }
     }
 
-    private void RestoreLight()
+    private void TriggerRestore()
     {
-        if (darknessController != null)
+        if (!restorationStarted)
         {
-            darknessController.RestoreLight(restoreAmount);
+            restorationStarted = true;
+            StartCoroutine(GradualRestore());
         }
-        else
+    }
+
+    private IEnumerator GradualRestore()
+    {
+        // Instantly remove the sprite by disabling the SpriteRenderer.
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (sr != null)
         {
-            Debug.LogWarning("DarknessController not found. Cannot restore light.");
+            sr.enabled = false;
         }
 
-        // Optionally, destroy the object after use (for one-time pickups).
+        // Optionally disable the collider to prevent further triggers.
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null)
+        {
+            col.enabled = false;
+        }
+
+        float elapsedTime = 0f;
+        while (elapsedTime < restoreDuration)
+        {
+            float increment = (restoreAmount / restoreDuration) * Time.deltaTime;
+            if (darknessController != null)
+            {
+                darknessController.RestoreLight(increment);
+            }
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure any remaining amount is applied.
+        float totalRestored = (restoreAmount / restoreDuration) * elapsedTime;
+        float remainder = restoreAmount - totalRestored;
+        if (remainder > 0 && darknessController != null)
+        {
+            darknessController.RestoreLight(remainder);
+        }
+
         if (destroyAfterRestore)
         {
             Destroy(gameObject);

@@ -1,24 +1,25 @@
 using UnityEngine;
+ // Required for Light2D
 
 public class DarknessController : MonoBehaviour
 {
     [Header("References")]
-    public Transform player;                // Assign your Player's transform here
-    public SpriteRenderer darknessRenderer; // The SpriteRenderer with the darkness sprite
+    public Transform player;          // Player's transform
+    public UnityEngine.Rendering.Universal.Light2D darknessLight;     // Replace SpriteRenderer with Light2D
 
     [Header("Positioning")]
-    public Vector2 offset = Vector2.zero;   // Offset from player's position
+    public Vector2 offset = Vector2.zero; // Offset from player's position
 
     [Header("Light Settings")]
-    public float maxLightRadius = 5f;       // Maximum "vision" size
-    public float minLightRadius = 0.1f;     // Minimum size (when the player dies)
-    public float lightDrainRate = 1f;       // How fast the light shrinks per second
-    public float lightRestoreRate = 1f;     // How fast the light regenerates per second when safe
+    public float maxLightRadius = 50f;     // Maximum light radius (vision range)
+    public float minLightRadius = 0.1f;   // Minimum radius (when the player dies)
+    public float lightDrainRate = 1f;     // How fast the light shrinks per second
+    public float lightRestoreRate = 1f;   // How fast the light regenerates per second when safe
     private float currentLightRadius;
 
     [Header("Twitch Effect Settings")]
     public bool enableTwitch = true;
-    [Tooltip("How much the darkness overlay should twitch (in world units).")]
+    [Tooltip("How much the light should twitch (in world units).")]
     public float twitchAmplitude = 0.1f;
     [Tooltip("How fast the twitch effect oscillates.")]
     public float twitchFrequency = 2f;
@@ -29,7 +30,6 @@ public class DarknessController : MonoBehaviour
 
     private bool isPlayerDeadFromDarkness = false;
     private bool isSafe = false;
-    // Multiplier to modify the light restoration rate in safe mode.
     private float safeZoneMultiplier = 1f;
 
     private void Start()
@@ -40,9 +40,10 @@ public class DarknessController : MonoBehaviour
 
     private void Update()
     {
-        if (player == null || isPlayerDeadFromDarkness) return;
+        if (player == null || isPlayerDeadFromDarkness)
+            return;
 
-        // If in safe mode, regenerate light using the multiplier.
+        // Handle light restoration in safe mode or light drain normally
         if (isSafe)
         {
             currentLightRadius += lightRestoreRate * safeZoneMultiplier * Time.deltaTime;
@@ -51,27 +52,26 @@ public class DarknessController : MonoBehaviour
         {
             float drainRate = lightDrainRate;
             if (isDanger)
-            {
                 drainRate *= dangerDrainMultiplier;
-            }
             currentLightRadius -= drainRate * Time.deltaTime;
         }
 
         currentLightRadius = Mathf.Clamp(currentLightRadius, minLightRadius, maxLightRadius);
 
-        // Update darkness sprite scale to match the current light radius.
-        if (darknessRenderer != null)
+        // Update the Light2D component to match the current light radius.
+        if (darknessLight != null)
         {
-            darknessRenderer.transform.localScale = new Vector3(currentLightRadius, currentLightRadius, 1);
+            // Adjust the outer radius of the light instead of scaling a sprite.
+            darknessLight.pointLightOuterRadius = currentLightRadius;
         }
 
-        // Position the darkness overlay at the player's position plus offset.
+        // Position the light at the player's position plus offset.
         Vector3 newPos = player.position;
         newPos.x += offset.x;
         newPos.y += offset.y;
-        newPos.z = transform.position.z; // Keep same Z to render correctly.
+        newPos.z = transform.position.z; // Maintain correct Z for rendering
 
-        // Add a twitch effect.
+        // Optionally add a twitch effect to the light's position.
         if (enableTwitch)
         {
             float noiseX = (Mathf.PerlinNoise(Time.time * twitchFrequency, 0.0f) - 0.5f) * 2f;
@@ -82,32 +82,32 @@ public class DarknessController : MonoBehaviour
 
         transform.position = newPos;
 
-        // If light reaches the minimum, kill the player.
+        // Check if the light has diminished too far.
         if (currentLightRadius <= minLightRadius)
         {
             PlayerController pc = player.GetComponent<PlayerController>();
             if (pc != null && !pc.IsDead)
             {
-                pc.TakeDamage(9999); // Enough to kill the player.
+                pc.TakeDamage(9999); // Trigger player death.
                 isPlayerDeadFromDarkness = true;
             }
         }
     }
 
-    // Modified SetSafe method to accept an optional multiplier.
+    // Set safe mode with an optional multiplier to adjust restoration speed.
     public void SetSafe(bool safeState, float multiplier = 1f)
     {
         isSafe = safeState;
         safeZoneMultiplier = multiplier;
     }
 
-    // Toggle danger mode.
+    // Toggle danger mode to increase light drain.
     public void SetDanger(bool dangerState)
     {
         isDanger = dangerState;
     }
 
-    // Restore light immediately.
+    // Immediately restore a certain amount of light.
     public void RestoreLight(float amount)
     {
         currentLightRadius += amount;
