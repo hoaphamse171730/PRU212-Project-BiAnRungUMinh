@@ -5,6 +5,9 @@ public class BoatController : MonoBehaviour
     [Header("Boat Movement")]
     [SerializeField] private float boatSpeed = 5f;
 
+    // Use a separate key for disembarking.
+    [SerializeField] private KeyCode disembarkKey = KeyCode.Q;
+
     private bool isBoarded = false;
     private Transform boardedPlayer;
 
@@ -17,13 +20,11 @@ public class BoatController : MonoBehaviour
             Vector3 movement = Vector3.right * moveInput * boatSpeed * Time.deltaTime;
             transform.Translate(movement);
 
-            // (Optional) If you want to allow disembarking on key press:
-            /*
-            if (Input.GetKeyDown(KeyCode.E))
+            // Check for disembark key (Q) to allow the player to get off the boat.
+            if (Input.GetKeyDown(disembarkKey))
             {
                 DisembarkBoat();
             }
-            */
         }
     }
 
