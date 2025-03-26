@@ -11,21 +11,21 @@ public class DarknessController : MonoBehaviour
     public Vector2 offset = Vector2.zero; // Offset from player's position
 
     [Header("Light Settings")]
-    public float maxLightRadius = 50f;     // Maximum light radius (vision range)
-    public float minLightRadius = 0.1f;   // Minimum radius (when the player dies)
+    public float maxLightRadius = 10f;     // Maximum light radius (vision range)
+    public float minLightRadius = 0f;   // Minimum radius (when the player dies)
     public float lightDrainRate = 1f;     // How fast the light shrinks per second
-    public float lightRestoreRate = 1f;   // How fast the light regenerates per second when safe
+    public float lightRestoreRate = 10f;   // How fast the light regenerates per second when safe
     private float currentLightRadius;
 
     [Header("Twitch Effect Settings")]
     public bool enableTwitch = true;
     [Tooltip("How much the light should twitch (in world units).")]
-    public float twitchAmplitude = 0.1f;
+    public float twitchAmplitude = 2f;
     [Tooltip("How fast the twitch effect oscillates.")]
-    public float twitchFrequency = 2f;
+    public float twitchFrequency = 5f;
 
     [Tooltip("Multiply the drain rate when in a danger zone.")]
-    public float dangerDrainMultiplier = 2f;
+    public float dangerDrainMultiplier = 3f;
     private bool isDanger = false;
 
     private bool isPlayerDeadFromDarkness = false;

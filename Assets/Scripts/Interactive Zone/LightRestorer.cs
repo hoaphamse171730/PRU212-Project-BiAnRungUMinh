@@ -7,7 +7,7 @@ public class LightRestorer : MonoBehaviour
     [Tooltip("Total amount of light to restore when activated.")]
     public float restoreAmount = 3f;
     [Tooltip("Duration (in seconds) over which the light is restored.")]
-    public float restoreDuration = 1f;
+    public float restoreDuration = 0.2f;
     [Tooltip("If true, this object will be destroyed after restoring light.")]
     public bool destroyAfterRestore = true;
     [Tooltip("If true, the player must press a key (E) to interact and restore light.")]
