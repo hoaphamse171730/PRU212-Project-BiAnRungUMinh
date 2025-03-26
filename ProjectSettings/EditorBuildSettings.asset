@@ -39,5 +39,6 @@ EditorBuildSettings:
     path: Assets/Scenes/DeadScene.unity
     guid: ca27bc20243da8b4d8396ce3c27ac171
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: bcee2cced0604814aa7dd163ba3a63b1, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
