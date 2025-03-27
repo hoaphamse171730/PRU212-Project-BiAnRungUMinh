@@ -467,6 +467,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC2
       objectReference: {fileID: 0}
+    - target: {fileID: 4444150036423672782, guid: 5fe395377f00d60448dc2a6ffe8062b9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8271285214642344097, guid: 5fe395377f00d60448dc2a6ffe8062b9, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -754,6 +758,10 @@ PrefabInstance:
     - target: {fileID: 831056393076670702, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
       propertyPath: 'dialogue.sentences.Array.data[1]'
       value: They used to take everything, leaving nothing but sorrow behind
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857924205387624331, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7214284128921094405, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
       propertyPath: m_Enabled
@@ -1045,6 +1053,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5192826126451514223, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274421963303165587, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -26068,8 +26080,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 7142293256366781602}
-  parallaxFactor: 1
-  followSpeed: 20
+  offset: {x: 0, y: 0, z: 0}
+  smoothSpeed: 0.125
 --- !u!1 &580004316
 GameObject:
   m_ObjectHideFlags: 0
@@ -27445,6 +27457,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603382831}
     m_Modifications:
+    - target: {fileID: 72608334169936892, guid: 980364dc54f9303438c3e4932c24e343, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 449527899563419451, guid: 980364dc54f9303438c3e4932c24e343, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.7803138
@@ -27654,6 +27670,10 @@ PrefabInstance:
       propertyPath: 'dialogue.choices.Array.data[1].nextDialogue.sentences.Array.data[0]'
       value: "At night, eerie figures appear among the trees. They\u2019re said to
         be warnings\u2014or perhaps pleas\u2014from the souls trapped here"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675791855862362820, guid: d3cbfc644b0db9341aec1c88bb920b2f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28128,6 +28148,10 @@ PrefabInstance:
       propertyPath: 'dialogue.choices.Array.data[0].nextDialogue.sentences.Array.data[0]'
       value: They say a notorious family was behind those dark deeds, driven by avarice
       objectReference: {fileID: 0}
+    - target: {fileID: 7296127471730698921, guid: 18bfcafdc41920a4a851a47a60edee03, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28298,6 +28322,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 7142293256366781602}
+    - target: {fileID: 6337744576850918539, guid: 7b685d3179a8dec4f89c68ce22f085e7, type: 3}
+      propertyPath: lightDrainRate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6337744576850918539, guid: 7b685d3179a8dec4f89c68ce22f085e7, type: 3}
+      propertyPath: maxLightRadius
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6337744576850918539, guid: 7b685d3179a8dec4f89c68ce22f085e7, type: 3}
       propertyPath: dangerDrainMultiplier
       value: 3
@@ -28666,6 +28698,10 @@ PrefabInstance:
     - target: {fileID: 4789893591337837189, guid: 96ef381f046b76a469044ed7f8cb60c6, type: 3}
       propertyPath: m_Offset.x
       value: -12.473339
+      objectReference: {fileID: 0}
+    - target: {fileID: 4789893591337837189, guid: 96ef381f046b76a469044ed7f8cb60c6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
