@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6010253669981209469}
   - component: {fileID: 7514681163025105213}
   - component: {fileID: 2071308293320329002}
+  - component: {fileID: 5712565882247132715}
   m_Layer: 0
   m_Name: NPC1
   m_TagString: Untagged
@@ -146,7 +147,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.9363164, y: 0}
+  m_Offset: {x: 0.47635508, y: 0.61147773}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -156,7 +157,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5.161564, y: 2.09375}
+  m_Size: {x: 6.0814867, y: 3.3167055}
   m_EdgeRadius: 0
 --- !u!114 &2071308293320329002
 MonoBehaviour:
@@ -177,3 +178,17 @@ MonoBehaviour:
     - Young Traveller, I'm your father :)))
     note: This the note
     choices: []
+  talkPromptUI: {fileID: 0}
+--- !u!114 &5712565882247132715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8442917630277303474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39824eb352afdd40b25d2a155723ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  safeLightRestoreMultiplier: 1

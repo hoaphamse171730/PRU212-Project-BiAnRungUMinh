@@ -4,9 +4,9 @@ using UnityEngine;
 public class Dialogue
 {
     [SerializeField] private string speaker;
-    [TextArea(3, 10)]
+    [TextArea(3, 50)]
     [SerializeField] private string[] sentences;
-    [TextArea(3, 10)]
+    [TextArea(3, 50)]
     [SerializeField] private string note;
     [SerializeField] private DialogueChoice[] choices; // New field for decision options.
 

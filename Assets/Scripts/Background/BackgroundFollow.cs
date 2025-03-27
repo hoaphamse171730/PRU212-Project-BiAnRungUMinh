@@ -3,19 +3,16 @@ using UnityEngine;
 public class BackgroundFollow : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    [SerializeField] private float parallaxFactor = 0.5f; // 0 to 1, lower = slower movement
-    [SerializeField] private float followSpeed = 0.1f;
+    [SerializeField] private Vector3 offset;
+    [SerializeField, Range(0, 1)] private float smoothSpeed = 0.125f;
 
-    private Vector3 initialPosition;
-
-    void Start()
+    private void LateUpdate()
     {
-        initialPosition = transform.position;
+        if (player == null) return; // Protect against null references
+
+        Vector3 desiredPosition = player.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
     }
 
-    void LateUpdate()
-    {
-        Vector3 targetPosition = new Vector3(initialPosition.x + (player.position.x * parallaxFactor), initialPosition.y, transform.position.z);
-        transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
-    }
 }

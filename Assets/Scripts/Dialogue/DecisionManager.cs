@@ -5,6 +5,8 @@ using UnityEngine.Events;
 public class DecisionManager : MonoBehaviour
 {
     public static DecisionManager Instance { get; private set; }
+    // Static variable to store the chosen event ID between scenes.
+    public static string SelectedEventID = "";
 
     [System.Serializable]
     public class DecisionMapping
@@ -17,6 +19,8 @@ public class DecisionManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+
         if (Instance == null)
             Instance = this;
         else
@@ -25,12 +29,14 @@ public class DecisionManager : MonoBehaviour
 
     public void TriggerDecision(string eventID)
     {
+        // Save the decision for later use.
+        SelectedEventID = eventID;
+
         foreach (var mapping in decisionMappings)
         {
             if (mapping.eventID == eventID)
             {
                 Debug.Log("TriggerDecision called with eventID: " + eventID);
-
                 mapping.decisionEvent.Invoke();
                 return;
             }
