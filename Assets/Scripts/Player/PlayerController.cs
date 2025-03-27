@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -110,8 +111,11 @@ public class PlayerController : MonoBehaviour
         {
             isDead = true;
             animator.SetTrigger("Dead");
+            ClearPersistentManagers();
+
             rb.linearVelocity = Vector2.zero;
-            StartCoroutine(RespawnAfterDelay(respawnDelay));
+            SceneManager.LoadScene("DeadScene");
+            //StartCoroutine(RespawnAfterDelay(respawnDelay));
         }
     }
 
@@ -164,4 +168,35 @@ public class PlayerController : MonoBehaviour
     }
 
     public bool IsDead => isDead;
+
+    private void ClearPersistentManagers()
+    {
+        // If your managers are implemented as singletons and marked DontDestroyOnLoad,
+        // destroying their game objects will remove them from the scene.
+        var dialogueManager = FindObjectOfType<DialogueManager>();
+        if (dialogueManager != null)
+        {
+            Destroy(dialogueManager.gameObject);
+        }
+
+        var decisionManager = FindObjectOfType<DecisionManager>();
+        if (decisionManager != null)
+        {
+            Destroy(decisionManager.gameObject);
+        }
+
+        var uiManager = FindObjectOfType<NotesUI>();
+        if (uiManager != null)
+        {
+            Destroy(uiManager.gameObject);
+        }
+
+        var noteManager = FindObjectOfType<NotesManager>();
+        if (noteManager != null)
+        {
+            Destroy(noteManager.gameObject);
+        }
+    }
+
+
 }
