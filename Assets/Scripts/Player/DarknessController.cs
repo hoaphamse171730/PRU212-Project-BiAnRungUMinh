@@ -54,8 +54,9 @@ public class DarknessController : MonoBehaviour
                 drainRate *= dangerDrainMultiplier;
             currentLightRadius -= drainRate * Time.deltaTime;
         }
-
         currentLightRadius = Mathf.Clamp(currentLightRadius, minLightRadius, maxLightRadius);
+
+        Debug.Log($"[Darkness] isSafe: {isSafe}, currentLightRadius: {currentLightRadius}");
 
         if (darknessLight != null)
         {
@@ -84,6 +85,7 @@ public class DarknessController : MonoBehaviour
             }
         }
     }
+
 
     // Instead of directly setting safe mode, manage a counter.
     public void EnterSafeZone(float multiplier)

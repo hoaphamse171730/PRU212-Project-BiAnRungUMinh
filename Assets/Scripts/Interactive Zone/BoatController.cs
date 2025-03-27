@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class BoatController : MonoBehaviour
@@ -99,19 +100,31 @@ public class BoatController : MonoBehaviour
                 Debug.Log("Player Rigidbody set to Dynamic.");
             }
 
+            // Store reference to the player before unparenting.
+            Transform disembarkingPlayer = boardedPlayer;
+
             // Remove the parent so the player is independent again.
             boardedPlayer.SetParent(null);
             boardedPlayer = null;
             isBoarded = false;
             Debug.Log("Player disembarked from the boat.");
 
-            // Turn off safe mode in darkness.
+            // Update the DarknessController's player reference,
+            // disable safe mode and reset safe zone counter.
             DarknessController darkness = FindObjectOfType<DarknessController>();
             if (darkness != null)
             {
-                darkness.SetSafe(false);
-                Debug.Log("Darkness safe mode disabled after disembarking.");
+                darkness.player = disembarkingPlayer;
+                StartCoroutine(DisableSafeModeDelayed(darkness));
             }
         }
     }
+    IEnumerator DisableSafeModeDelayed(DarknessController darkness)
+    {
+        yield return null; // Wait one frame.
+        darkness.SetSafe(false);
+        darkness.safeZoneCounter = 0;
+        Debug.Log("Darkness safe mode disabled after delay.");
+    }
+
 }

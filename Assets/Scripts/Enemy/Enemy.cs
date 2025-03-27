@@ -139,7 +139,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Debug.Log("Stop attacking");
+            //Debug.Log("Stop attacking");
             isMoving = true;
         }
     }
