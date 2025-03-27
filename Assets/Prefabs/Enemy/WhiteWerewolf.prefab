@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 38152956732402245}
   m_Layer: 0
   m_Name: WhiteWerewolf
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +51,8 @@ MonoBehaviour:
   roamDistance: 3
   aggroRange: 5
   player: {fileID: 0}
+  damage: 35
+  attackCooldown: 0.5
 --- !u!70 &5238899479499111222
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
