@@ -76,14 +76,14 @@ public class PlayerController : MonoBehaviour
 
         HandleMovement();
         HandleJump();
-        HandleDamageInput();
         HandleBreathing();
     }
 
     private void HandleMovement()
     {
-        float moveInput = Input.GetAxis("Horizontal");
-        bool isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+        // Update the class fields directly.
+        moveInput = Input.GetAxis("Horizontal");
+        isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         float currentSpeed = isRunning ? moveSpeed * runMultiplier : moveSpeed;
 
         rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);
@@ -116,6 +116,7 @@ public class PlayerController : MonoBehaviour
 
         spriteRenderer.flipX = moveInput < 0;
     }
+
 
     private void HandleJump()
     {
@@ -196,7 +197,7 @@ public class PlayerController : MonoBehaviour
         }
 
         currentHealth = maxHealth;
-        isDead = false;
+        IsDead = false;
         rb.linearVelocity = Vector2.zero;
         animator.ResetTrigger("Dead");
         animator.Play("idle");
@@ -267,8 +268,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-}
-    public bool IsDead => isDead;
 
     private void ClearPersistentManagers()
     {
