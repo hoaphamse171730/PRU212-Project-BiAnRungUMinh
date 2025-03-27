@@ -8,6 +8,9 @@ public class DecisionManager : MonoBehaviour
     // Static variable to store the chosen event ID between scenes.
     public static string SelectedEventID = "";
 
+    [Header("Debug Info")]
+    [SerializeField] private string debugSelectedEventID; // This field will appear in the Inspector
+
     [System.Serializable]
     public class DecisionMapping
     {
@@ -25,6 +28,11 @@ public class DecisionManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+    }
+
+    private void Update()
+    {
+        debugSelectedEventID = SelectedEventID;
     }
 
     public void TriggerDecision(string eventID)

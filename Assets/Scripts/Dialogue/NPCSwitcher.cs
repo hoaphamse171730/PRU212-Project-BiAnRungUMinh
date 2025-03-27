@@ -3,8 +3,8 @@ using UnityEngine;
 public class NPCSwitcher : MonoBehaviour
 {
     [Header("Assign your NPC GameObjects")]
-    public GameObject npcA; 
-    public GameObject npcB; 
+    public GameObject goodNPC;
+    public GameObject badNPC;
 
     private void Start()
     {
@@ -12,18 +12,18 @@ public class NPCSwitcher : MonoBehaviour
 
         if (decision == "ShowGoodNPC")
         {
-            if (npcA != null) npcA.SetActive(false);
-            if (npcB != null) npcB.SetActive(true);
+            if (goodNPC != null) goodNPC.SetActive(true);
+            if (badNPC != null) badNPC.SetActive(false);
         }
         else if (decision == "ShowBadNPC")
         {
-            if (npcB != null) npcB.SetActive(false);
-            if (npcA != null) npcA.SetActive(true);
+            if (badNPC != null) badNPC.SetActive(true);
+            if (goodNPC != null) goodNPC.SetActive(false);
         }
         else
         {
-            if (npcA != null) npcA.SetActive(true);
-            if (npcB != null) npcB.SetActive(true);
+            if (goodNPC != null) goodNPC.SetActive(true);
+            if (badNPC != null) badNPC.SetActive(true);
         }
     }
 }

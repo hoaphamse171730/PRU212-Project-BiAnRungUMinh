@@ -77,10 +77,15 @@ public class SceneTransitionManager : MonoBehaviour
                 currentSceneIndex = System.Array.IndexOf(sceneOrder, "BadEnding");
                 Debug.Log("NextScene: Bad ending condition met. Loading BadEnding.");
             }
-            else // Good ending condition
+            else if (decision == "ShowGoodNPC")
             {
                 currentSceneIndex = System.Array.IndexOf(sceneOrder, "OpenEnding");
                 Debug.Log("NextScene: Good ending condition met. Loading OpenEnding.");
+            }else
+            {
+                currentSceneIndex = System.Array.IndexOf(sceneOrder, "BadEnding");
+                Debug.Log("NextScene: BUG when find decision.");
+
             }
         }
         // Otherwise, simply move to the next scene in the order.

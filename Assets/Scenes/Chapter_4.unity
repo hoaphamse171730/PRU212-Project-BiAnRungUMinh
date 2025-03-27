@@ -18226,8 +18226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65002dbb10776746a412b3c34d581a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcA: {fileID: 1180730671}
-  npcB: {fileID: 1210702233}
+  goodNPC: {fileID: 1180730671}
+  badNPC: {fileID: 1210702233}
 --- !u!4 &1963474194
 Transform:
   m_ObjectHideFlags: 0
