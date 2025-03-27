@@ -124,7 +124,7 @@ public class SceneTransitionManager : MonoBehaviour
     /// <summary>
     /// Clears persistent managers from the scene.
     /// </summary>
-    private void ClearPersistentManagers()
+    public void ClearPersistentManagers()
     {
         // Destroy other persistent managers if they exist.
         var decisionManager = FindObjectOfType<DecisionManager>();

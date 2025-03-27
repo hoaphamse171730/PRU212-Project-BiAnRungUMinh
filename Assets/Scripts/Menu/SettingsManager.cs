@@ -162,6 +162,7 @@ public class SettingsManager : MonoBehaviour
         SceneTransitionManager sceneTransitionManager = SceneTransitionManager.Instance;
         if (sceneTransitionManager != null)
         {
+            sceneTransitionManager.ClearPersistentManagers();
             sceneTransitionManager.ReturnToMainMenu();
         }
         else
