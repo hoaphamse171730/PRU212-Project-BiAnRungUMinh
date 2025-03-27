@@ -4,10 +4,11 @@ public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private Dialogue dialogue;
     [SerializeField] private GameObject talkPromptUI;
+    [SerializeField] private AudioSource audioSource;   
+    [SerializeField] private AudioClip dialogueSound;     
 
     private void Start()
     {
-        // If talkPromptUI hasn't been assigned, try finding it by name.
         if (talkPromptUI == null)
         {
             GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
@@ -24,6 +25,15 @@ public class DialogueTrigger : MonoBehaviour
                 Debug.LogWarning("TalkPrompt GameObject not found even with Resources.FindObjectsOfTypeAll.");
             }
         }
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                Debug.LogWarning("No AudioSource found on this GameObject. Please assign one in the Inspector.");
+            }
+        }
     }
 
     public void TriggerDialogue()
@@ -32,6 +42,13 @@ public class DialogueTrigger : MonoBehaviour
         {
             DialogueManager.Instance.StartDialogue(dialogue);
         }
+
+        // Play the dialogue sound effect.
+        if (audioSource != null && dialogueSound != null)
+        {
+            audioSource.PlayOneShot(dialogueSound);
+        }
+
         if (talkPromptUI != null)
         {
             talkPromptUI.SetActive(false);

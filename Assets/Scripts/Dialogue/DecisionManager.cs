@@ -18,7 +18,8 @@ public class DecisionManager : MonoBehaviour
         public UnityEvent decisionEvent;
     }
 
-    [SerializeField] private List<DecisionMapping> decisionMappings = new List<DecisionMapping>();
+    [SerializeField] 
+    public List<DecisionMapping> decisionMappings = new List<DecisionMapping>();
 
     private void Awake()
     {
