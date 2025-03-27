@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour
     public float roamDistance = 3f;
     public float aggroRange = 5f;
     public Transform player;
+    public int damage = 35;
+    public float attackCooldown = 0.5f; // Cooldown time in seconds
 
     private float startX;
     private int direction = 1;
@@ -14,6 +16,8 @@ public class Enemy : MonoBehaviour
     private EnemyVisual enemyVisual;
     private bool isMoving = true;
     private Vector3 startPosition;
+    private float lastAttackTime = 0f;
+    
 
     void Start()
     {
@@ -112,6 +116,11 @@ public class Enemy : MonoBehaviour
 
     private void HandleAttack()
     {
+        if (Time.time - lastAttackTime < attackCooldown)
+        {
+            return; // Exit if still on cooldown
+        }
+
         Collider2D hit = Physics2D.OverlapCircle(transform.position, 1f, LayerMask.GetMask("Player"));
 
         if (hit != null && hit.CompareTag("Player"))
@@ -124,7 +133,8 @@ public class Enemy : MonoBehaviour
             PlayerController playerController = hit.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                playerController.TakeDamage(35); 
+                playerController.TakeDamage(damage);
+                lastAttackTime = Time.time; // Reset cooldown
             }
         }
         else
