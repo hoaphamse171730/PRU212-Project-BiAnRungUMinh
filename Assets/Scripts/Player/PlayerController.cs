@@ -127,7 +127,6 @@ public class PlayerController : MonoBehaviour
 
     private void Respawn()
     {
-        // Reposition the player at the spawn point if it exists.
         if (spawnPoint != null)
         {
             transform.position = spawnPoint.position;
@@ -137,13 +136,11 @@ public class PlayerController : MonoBehaviour
             Debug.LogWarning("No spawn point set! Player remains at current position.");
         }
 
-        // Reset player's health and state.
         currentHealth = maxHealth;
         isDead = false;
         rb.linearVelocity = Vector2.zero;
         animator.ResetTrigger("Dead");
         animator.Play("idle");
-        // Reset DarknessController light.
         DarknessController dc = FindObjectOfType<DarknessController>();
         if (dc != null)
         {
@@ -171,8 +168,6 @@ public class PlayerController : MonoBehaviour
 
     private void ClearPersistentManagers()
     {
-        // If your managers are implemented as singletons and marked DontDestroyOnLoad,
-        // destroying their game objects will remove them from the scene.
         var dialogueManager = FindObjectOfType<DialogueManager>();
         if (dialogueManager != null)
         {

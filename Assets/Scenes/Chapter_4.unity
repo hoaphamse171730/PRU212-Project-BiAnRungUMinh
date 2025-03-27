@@ -16746,6 +16746,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1147189903}
     m_Modifications:
+    - target: {fileID: 2964173088556675629, guid: e5c45278c7832c94fab19af47e49ad3b, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 656775833}
     - target: {fileID: 5018199233889326119, guid: e5c45278c7832c94fab19af47e49ad3b, type: 3}
       propertyPath: m_Name
       value: DynamicLight Darkness
@@ -17229,6 +17233,11 @@ PrefabInstance:
 --- !u!4 &1180730670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6575402051562637631, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+  m_PrefabInstance: {fileID: 1180730669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1180730671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8442917630277303474, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
   m_PrefabInstance: {fileID: 1180730669}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1210702233
@@ -18071,6 +18080,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1963474192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963474194}
+  - component: {fileID: 1963474193}
+  m_Layer: 0
+  m_Name: NPCSwitcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1963474193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963474192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65002dbb10776746a412b3c34d581a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcA: {fileID: 1180730671}
+  npcB: {fileID: 1210702233}
+--- !u!4 &1963474194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963474192}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 264.0646, y: -18.13229, z: 1.89978}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004276665
 GameObject:
   m_ObjectHideFlags: 0
@@ -18351,3 +18406,4 @@ SceneRoots:
   - {fileID: 2091747845}
   - {fileID: 8173179467442442522}
   - {fileID: 33028288}
+  - {fileID: 1963474194}

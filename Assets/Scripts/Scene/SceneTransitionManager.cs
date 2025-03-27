@@ -6,9 +6,9 @@ public class SceneTransitionManager : MonoBehaviour
     [SerializeField] private int playerScore = 0; // Example condition for endings
 
     private int currentSceneIndex = 0;
-    private string[] sceneOrder = { "MainMenu", "Prologue", "Chapter_1", "Chapter_2", "Chapter_3", "Chapter_4", "BadEnding", "OpenEnding", "EndMenu" };
+    // Order: Prologue -> Chapter_1 -> Chapter_2 -> Chapter_3 -> Chapter_4 -> (endings) -> EndMenu
+    private string[] sceneOrder = { "Prologue", "Chapter_1", "Chapter_2", "Chapter_3", "Chapter_4", "BadEnding", "OpenEnding", "EndMenu" };
 
-    // Singleton pattern to ensure only one instance exists
     public static SceneTransitionManager Instance { get; private set; }
 
     void Awake()
@@ -17,74 +17,100 @@ public class SceneTransitionManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Prevent this GameObject from being destroyed on scene load
+            DontDestroyOnLoad(gameObject); // Persist across scenes
         }
         else
         {
-            Destroy(gameObject); // Destroy duplicate instances
+            Destroy(gameObject);
             return;
         }
     }
 
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     void Start()
     {
-        // Initialize the current scene
+        // Initialize currentSceneIndex based on the active scene.
         currentSceneIndex = System.Array.IndexOf(sceneOrder, SceneManager.GetActiveScene().name);
         if (currentSceneIndex == -1)
         {
-            Debug.LogWarning("Current scene not found in sceneOrder. Starting from MainMenu.");
-            currentSceneIndex = 0; // Default to MainMenu
+            Debug.LogWarning("Current scene not found in sceneOrder. Starting from Prologue.");
+            currentSceneIndex = 0;
         }
         Debug.Log($"Start: Current scene is {SceneManager.GetActiveScene().name}, currentSceneIndex = {currentSceneIndex}");
     }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        int index = System.Array.IndexOf(sceneOrder, scene.name);
+        if (index != -1)
+        {
+            currentSceneIndex = index;
+            Debug.Log($"OnSceneLoaded: Updated currentSceneIndex to {currentSceneIndex} for scene {scene.name}");
+        }
+        else
+        {
+            Debug.LogWarning($"OnSceneLoaded: Scene {scene.name} not found in sceneOrder.");
+        }
+    }
+
     public void NextScene()
     {
-        Debug.Log($"NextScene: Before increment, currentSceneIndex = {currentSceneIndex} (Scene: {sceneOrder[currentSceneIndex]})");
+        string currentScene = sceneOrder[currentSceneIndex];
+        Debug.Log($"NextScene: Current scene is {currentScene} at index {currentSceneIndex}");
 
-        // Determine the next scene
-        currentSceneIndex++;
-        if (currentSceneIndex >= sceneOrder.Length)
-        {
-            currentSceneIndex = sceneOrder.Length - 1; // Stay at EndMenu
-            Debug.Log($"NextScene: Clamped to EndMenu, currentSceneIndex = {currentSceneIndex}");
-        }
-        else if (currentSceneIndex == 6) // Check for ending condition at Chapter_4 (index 5 in new sceneOrder)
+        // If we are at Chapter_4, then decide which ending to load.
+        if (currentScene == "Chapter_4")
         {
             if (playerScore < 50) // Bad ending condition
             {
-                currentSceneIndex = 6; // BadEnding
-                Debug.Log($"NextScene: Bad ending condition met, currentSceneIndex = {currentSceneIndex}");
+                currentSceneIndex = System.Array.IndexOf(sceneOrder, "BadEnding");
+                Debug.Log("NextScene: Bad ending condition met. Loading BadEnding.");
             }
             else // Good ending condition
             {
-                currentSceneIndex = 7; // OpenEnding
-                Debug.Log($"NextScene: Good ending condition met, currentSceneIndex = {currentSceneIndex}");
+                currentSceneIndex = System.Array.IndexOf(sceneOrder, "OpenEnding");
+                Debug.Log("NextScene: Good ending condition met. Loading OpenEnding.");
             }
+        }
+        // Otherwise, simply move to the next scene in the order.
+        else if (currentSceneIndex < sceneOrder.Length - 1)
+        {
+            currentSceneIndex++;
+        }
+        else
+        {
+            Debug.Log("NextScene: Already at final scene.");
         }
 
         Debug.Log($"NextScene: Loading scene {sceneOrder[currentSceneIndex]} (Index: {currentSceneIndex})");
-        // Load the next scene immediately
         SceneManager.LoadScene(sceneOrder[currentSceneIndex]);
     }
 
-    // Method to restart from the beginning
+    // Method to restart from the beginning (starting at Prologue)
     public void RestartGame()
     {
-        currentSceneIndex = 1; // Set to Prologue (index 1 in new sceneOrder)
+        currentSceneIndex = 0; // Prologue is at index 0
         Debug.Log($"RestartGame: Resetting to Prologue, currentSceneIndex = {currentSceneIndex}");
-        SceneManager.LoadScene("Prologue");
+        SceneManager.LoadScene(sceneOrder[currentSceneIndex]);
     }
 
-    // Method to return to main menu
+    // Method to return to main menu (assumed to be separate from the scene order)
     public void ReturnToMainMenu()
     {
-        currentSceneIndex = 1; // Set to Prologue for not getting bug
-        Debug.Log($"ReturnToMainMenu: Setting to MainMenu, currentSceneIndex = {currentSceneIndex}");
+        Debug.Log("ReturnToMainMenu: Loading MainMenu.");
         SceneManager.LoadScene("MainMenu");
     }
 
-    // Method to update player score (example, call this during gameplay)
+    // Update the player score (for example, call this during gameplay)
     public void UpdatePlayerScore(int score)
     {
         playerScore = score;

@@ -743,11 +743,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1270080271590421228, guid: a640ca72afbc04046a7a17bb46140610, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 263.28186
+      value: 254.98264
       objectReference: {fileID: 0}
     - target: {fileID: 1270080271590421228, guid: a640ca72afbc04046a7a17bb46140610, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.6
+      value: -18.543926
       objectReference: {fileID: 0}
     - target: {fileID: 1270080271590421228, guid: a640ca72afbc04046a7a17bb46140610, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1425,6 +1425,9 @@ GameObject:
   m_Component:
   - component: {fileID: 360797900}
   - component: {fileID: 360797899}
+  - component: {fileID: 360797903}
+  - component: {fileID: 360797902}
+  - component: {fileID: 360797901}
   m_Layer: 0
   m_Name: 2_0
   m_TagString: Untagged
@@ -1502,6 +1505,100 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1679934082}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &360797901
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360797898}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.46875, y: 1.78125}
+    newSize: {x: 1.46875, y: 1.78125}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 3.46875, y: 2.78125}
+  m_EdgeRadius: 0
+--- !u!114 &360797902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360797898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311d85e9f8210b1438a6a55020295d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    speaker: Stone
+    sentences:
+    - What will you choose?
+    note: 
+    choices:
+    - choiceText: Sacrifice
+      nextDialogue:
+        speaker: Main
+        sentences:
+        - I will sacrifice
+        note: 
+        choices: []
+      eventID: ShowGoodNPC
+    - choiceText: No
+      nextDialogue:
+        speaker: Main
+        sentences:
+        - I will not sacrifice
+        note: 
+        choices: []
+      eventID: ShowBadNPC
+  talkPromptUI: {fileID: 0}
+--- !u!114 &360797903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360797898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f39824eb352afdd40b25d2a155723ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  safeLightRestoreMultiplier: 1
 --- !u!1 &383750711
 GameObject:
   m_ObjectHideFlags: 0
@@ -47612,11 +47709,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1270080271590421228, guid: a640ca72afbc04046a7a17bb46140610, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 265.22147
+      value: 256.92224
       objectReference: {fileID: 0}
     - target: {fileID: 1270080271590421228, guid: a640ca72afbc04046a7a17bb46140610, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.54
+      value: -18.483927
       objectReference: {fileID: 0}
     - target: {fileID: 1270080271590421228, guid: a640ca72afbc04046a7a17bb46140610, type: 3}
       propertyPath: m_LocalPosition.z
@@ -48985,7 +49082,7 @@ Transform:
   m_GameObject: {fileID: 1726878409}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 248.77, y: -22.87, z: -0.019261075}
+  m_LocalPosition: {x: 240.47078, y: -22.813927, z: -0.019261075}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
