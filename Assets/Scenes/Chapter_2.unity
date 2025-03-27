@@ -927,8 +927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    speaker: 
-    sentences: []
+    speaker: 'Stone:'
+    sentences:
+    - The answer you want is ahead
     note: 
     choices: []
   talkPromptUI: {fileID: 0}
@@ -49049,11 +49050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5637684133103536285, guid: 71e849bbad7d2ec4bb7005945556335d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 13.183406
+      value: 7.7539287
       objectReference: {fileID: 0}
     - target: {fileID: 5637684133103536285, guid: 71e849bbad7d2ec4bb7005945556335d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7.0123997
+      value: -14.736767
       objectReference: {fileID: 0}
     - target: {fileID: 5637684133103536285, guid: 71e849bbad7d2ec4bb7005945556335d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
