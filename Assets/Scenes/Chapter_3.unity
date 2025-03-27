@@ -1917,6 +1917,8 @@ MonoBehaviour:
         choices: []
       eventID: ShowBadNPC
   talkPromptUI: {fileID: 0}
+  audioSource: {fileID: 0}
+  dialogueSound: {fileID: 0}
 --- !u!114 &360797903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47202,6 +47204,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2947299472492964985, guid: 96ef381f046b76a469044ed7f8cb60c6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 637735250}
+    - targetCorrespondingSourceObject: {fileID: 2947299472492964985, guid: 96ef381f046b76a469044ed7f8cb60c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 637735252}
   m_SourcePrefab: {fileID: 100100000, guid: 96ef381f046b76a469044ed7f8cb60c6, type: 3}
 --- !u!1 &637735249 stripped
 GameObject:
@@ -47226,6 +47231,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 834698692648388814, guid: 96ef381f046b76a469044ed7f8cb60c6, type: 3}
   m_PrefabInstance: {fileID: 637735248}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &637735252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637735249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311d85e9f8210b1438a6a55020295d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    speaker: Main
+    sentences:
+    - A foggy graveyard materializes before me, its weathered tombstones bearing
+      names long forgotten
+    - "Faint voices seem to whisper from the silence\u2014a legacy of pain and regret"
+    note: 
+    choices:
+    - choiceText: Examine
+      nextDialogue:
+        speaker: Main
+        sentences:
+        - "Six tombstones\u2026 all names of children. My family\u2014did they really
+          do this?"
+        - "All for greed? I can\u2019t believe what I\u2019m reading"
+        - .....
+        - "These poor souls\u2026 "
+        - I have to set them free, no matter what
+        note: 
+        choices: []
+      eventID: 
+  talkPromptUI: {fileID: 0}
+  audioSource: {fileID: 0}
+  dialogueSound: {fileID: 0}
 --- !u!1 &653413017
 GameObject:
   m_ObjectHideFlags: 0
