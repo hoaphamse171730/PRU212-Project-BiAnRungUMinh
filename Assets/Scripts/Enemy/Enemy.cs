@@ -118,7 +118,14 @@ public class Enemy : MonoBehaviour
         {
             isMoving = false;
             Debug.Log("Attacking player!");
-            enemyVisual.PlayAttack(); // Play attack animation
+            enemyVisual.PlayAttack();
+
+            // Get the PlayerController component from the hit collider and apply damage.
+            PlayerController playerController = hit.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.TakeDamage(35); 
+            }
         }
         else
         {
@@ -126,4 +133,5 @@ public class Enemy : MonoBehaviour
             isMoving = true;
         }
     }
+
 }
