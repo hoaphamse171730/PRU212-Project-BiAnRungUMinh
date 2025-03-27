@@ -22,6 +22,12 @@ public class DeadMenuController : MonoBehaviour
     void OnRestartGameClicked()
     {
         string sceneToLoad = string.IsNullOrEmpty(GameSession.LastScene) ? "Prologue" : GameSession.LastScene;
+
+        if (sceneToLoad == "BadEnding")
+        {
+            sceneToLoad = "Prologue";
+        }
+
         SceneManager.LoadScene(sceneToLoad);
     }
 
