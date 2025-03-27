@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,6 +20,11 @@ public class PlayerController : MonoBehaviour
         get { return IsDead; }
     }
 
+    [Header("Respawn Settings")]
+    [Tooltip("Assign a spawn point (a Transform in the scene with tag 'SpawnPoint')")]
+    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private float respawnDelay = 5f;
+
     private Animator animator;
     private Rigidbody2D rb;
     private bool isGrounded = false;
@@ -35,6 +42,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip heavyBreathClip;
     [SerializeField] private float breathInterval = 3f;
     private float breathTimer;
+    // Input variables
+    private float moveInput;
+    private bool jumpInput;
+    private bool isRunning;
 
     private void Start()
     {
@@ -43,6 +54,20 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         footstepAudioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
+
+        // Find spawn point by tag if not assigned in the Inspector.
+        if (spawnPoint == null)
+        {
+            GameObject sp = GameObject.FindGameObjectWithTag("SpawnPoint");
+            if (sp != null)
+            {
+                spawnPoint = sp.transform;
+            }
+            else
+            {
+                Debug.LogWarning("Spawn point not found in scene. Please assign spawnPoint manually.");
+            }
+        }
     }
 
     private void Update()
@@ -96,12 +121,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            jumpInput = true;
         }
-    }
 
-    private void HandleDamageInput()
-    {
+        // Testing damage: press H to take 10 damage or K to take fatal damage.
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(10);
@@ -110,6 +133,28 @@ public class PlayerController : MonoBehaviour
         {
             TakeDamage(100);
         }
+
+        // Update animations (idle if no movement).
+        float animationSpeed = Mathf.Abs(moveInput) * (isRunning ? runMultiplier : 1f);
+        animator.SetFloat("Speed", animationSpeed, dampTime, Time.deltaTime);
+        animator.SetBool("isRunning", isRunning && Mathf.Abs(moveInput) > 0.1f);
+
+        // Flip sprite based on movement direction.
+        spriteRenderer.flipX = moveInput < 0;
+    }
+
+    private void FixedUpdate()
+    {
+        if (isDead) return;
+
+        float currentSpeed = isRunning ? moveSpeed * runMultiplier : moveSpeed;
+        rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);
+
+        if (jumpInput)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            jumpInput = false;
+        }
     }
 
     public void TakeDamage(int damage)
@@ -117,7 +162,6 @@ public class PlayerController : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= damage;
-
         if (currentHealth > 0)
         {
             animator.SetTrigger("Hurt");
@@ -126,7 +170,40 @@ public class PlayerController : MonoBehaviour
         {
             IsDead = true;
             animator.SetTrigger("Dead");
+            ClearPersistentManagers();
+
             rb.linearVelocity = Vector2.zero;
+            SceneManager.LoadScene("DeadScene");
+            //StartCoroutine(RespawnAfterDelay(respawnDelay));
+        }
+    }
+
+    private IEnumerator RespawnAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Respawn();
+    }
+
+    private void Respawn()
+    {
+        if (spawnPoint != null)
+        {
+            transform.position = spawnPoint.position;
+        }
+        else
+        {
+            Debug.LogWarning("No spawn point set! Player remains at current position.");
+        }
+
+        currentHealth = maxHealth;
+        isDead = false;
+        rb.linearVelocity = Vector2.zero;
+        animator.ResetTrigger("Dead");
+        animator.Play("idle");
+        DarknessController dc = FindObjectOfType<DarknessController>();
+        if (dc != null)
+        {
+            dc.ResetLight();
         }
     }
 
@@ -190,4 +267,35 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+}
+    public bool IsDead => isDead;
+
+    private void ClearPersistentManagers()
+    {
+        var dialogueManager = FindObjectOfType<DialogueManager>();
+        if (dialogueManager != null)
+        {
+            Destroy(dialogueManager.gameObject);
+        }
+
+        var decisionManager = FindObjectOfType<DecisionManager>();
+        if (decisionManager != null)
+        {
+            Destroy(decisionManager.gameObject);
+        }
+
+        var uiManager = FindObjectOfType<NotesUI>();
+        if (uiManager != null)
+        {
+            Destroy(uiManager.gameObject);
+        }
+
+        var noteManager = FindObjectOfType<NotesManager>();
+        if (noteManager != null)
+        {
+            Destroy(noteManager.gameObject);
+        }
+    }
+
+
 }
