@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 6.5
+  jumpForce: 8
   dampTime: 0.1
   runMultiplier: 1.5
   maxHealth: 100
