@@ -221,7 +221,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!114 &7543141685219265768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,3 +238,5 @@ MonoBehaviour:
   roamDistance: 3
   aggroRange: 5
   player: {fileID: 0}
+  damage: 35
+  attackCooldown: 0.5
