@@ -25449,7 +25449,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: a3f111b4179667d48bb6416e959b2eea, type: 3}
   m_Resource: {fileID: 8300000, guid: a3f111b4179667d48bb6416e959b2eea, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -25672,8 +25672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1068267564}
-  parallaxFactor: 1
-  followSpeed: 20
+  offset: {x: 0, y: 0, z: 0}
+  smoothSpeed: 0.125
 --- !u!1 &603382830
 GameObject:
   m_ObjectHideFlags: 0
