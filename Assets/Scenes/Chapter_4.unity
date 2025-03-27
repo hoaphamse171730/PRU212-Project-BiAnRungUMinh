@@ -17511,6 +17511,51 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603382831}
     m_Modifications:
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.note
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.speaker
+      value: Guardian of Redemption
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[0]'
+      value: "Your courage to face the darkness and accept your family\u2019s burden
+        is admirable"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[1]'
+      value: Your sacrifice might finally mend the wounds of this cursed land
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[2]'
+      value: Now, accept the path to redemption and pay your family karma
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.data[0].choiceText
+      value: Yes
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.data[0].nextDialogue.speaker
+      value: Guardian of Redemption
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.data[0].nextDialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: 'dialogue.choices.Array.data[0].nextDialogue.sentences.Array.data[0]'
+      value: See you again!
+      objectReference: {fileID: 0}
     - target: {fileID: 6575402051562637631, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.49579
@@ -17719,11 +17764,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    speaker: 
-    sentences: []
+    speaker: Harbinger of Doom
+    sentences:
+    - You promises to free them
+    - Your hesitation has sealed your fate. The curse tightens its grip on you and
+      your bloodline
+    - Now, the forest will demand its due, and no mercy awaits you
     note: 
-    choices: []
+    choices:
+    - choiceText: Give up
+      nextDialogue:
+        speaker: Harbinger of Doom
+        sentences:
+        - See you again
+        note: 
+        choices: []
+      eventID: 
   talkPromptUI: {fileID: 0}
+  audioSource: {fileID: 0}
+  dialogueSound: {fileID: 0}
 --- !u!95 &1210702238
 Animator:
   serializedVersion: 7
