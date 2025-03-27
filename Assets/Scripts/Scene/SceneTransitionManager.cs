@@ -1,10 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SceneTransitionManager : MonoBehaviour
 {
     [SerializeField] private int playerScore = 0; // Example condition for endings
-
     private int currentSceneIndex = 0;
     // Order: Prologue -> Chapter_1 -> Chapter_2 -> Chapter_3 -> Chapter_4 -> (endings) -> EndMenu
     private string[] sceneOrder = { "Prologue", "Chapter_1", "Chapter_2", "Chapter_3", "Chapter_4", "BadEnding", "OpenEnding", "EndMenu" };
@@ -67,7 +67,6 @@ public class SceneTransitionManager : MonoBehaviour
         string currentScene = sceneOrder[currentSceneIndex];
         Debug.Log($"NextScene: Current scene is {currentScene} at index {currentSceneIndex}");
 
-        // If we are at Chapter_4, then decide which ending to load.
         if (currentScene == "Chapter_4")
         {
             string decision = DecisionManager.SelectedEventID;
@@ -81,11 +80,11 @@ public class SceneTransitionManager : MonoBehaviour
             {
                 currentSceneIndex = System.Array.IndexOf(sceneOrder, "OpenEnding");
                 Debug.Log("NextScene: Good ending condition met. Loading OpenEnding.");
-            }else
+            }
+            else
             {
                 currentSceneIndex = System.Array.IndexOf(sceneOrder, "BadEnding");
                 Debug.Log("NextScene: BUG when find decision.");
-
             }
         }
         // Otherwise, simply move to the next scene in the order.
@@ -98,24 +97,57 @@ public class SceneTransitionManager : MonoBehaviour
             Debug.Log("NextScene: Already at final scene.");
         }
 
-        Debug.Log($"NextScene: Loading scene {sceneOrder[currentSceneIndex]} (Index: {currentSceneIndex})");
-        SceneManager.LoadScene(sceneOrder[currentSceneIndex]);
+        string nextScene = sceneOrder[currentSceneIndex];
+        Debug.Log($"NextScene: Loading scene {nextScene} (Index: {currentSceneIndex})");
+
+        if (nextScene == "EndMenu")
+        {
+            ClearPersistentManagers();
+        }
+
+        SceneManager.LoadScene(nextScene);
     }
 
-    // Method to restart from the beginning (starting at Prologue)
     public void RestartGame()
     {
-        currentSceneIndex = 0; // Prologue is at index 0
+        currentSceneIndex = 0; 
         Debug.Log($"RestartGame: Resetting to Prologue, currentSceneIndex = {currentSceneIndex}");
         SceneManager.LoadScene(sceneOrder[currentSceneIndex]);
     }
 
-    // Method to return to main menu (assumed to be separate from the scene order)
     public void ReturnToMainMenu()
     {
         Debug.Log("ReturnToMainMenu: Loading MainMenu.");
         SceneManager.LoadScene("MainMenu");
     }
 
-
+    /// <summary>
+    /// Clears persistent managers from the scene.
+    /// </summary>
+    private void ClearPersistentManagers()
+    {
+        // Destroy other persistent managers if they exist.
+        var decisionManager = FindObjectOfType<DecisionManager>();
+        if (decisionManager != null)
+        {
+            Destroy(decisionManager.gameObject);
+        }
+        var dialogueManager = FindObjectOfType<DialogueManager>();
+        if (dialogueManager != null)
+        {
+            Destroy(dialogueManager.gameObject);
+        }
+        var uiManager = FindObjectOfType<NotesUI>();
+        if (uiManager != null)
+        {
+            Destroy(uiManager.gameObject);
+        }
+        var noteManager = FindObjectOfType<NotesManager>();
+        if (noteManager != null)
+        {
+            Destroy(noteManager.gameObject);
+        }
+        // Optionally, destroy the SceneTransitionManager itself.
+        Destroy(gameObject);
+    }
 }
