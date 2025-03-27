@@ -50594,10 +50594,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalLight
       objectReference: {fileID: 0}
-    - target: {fileID: 8363833638498722129, guid: ccf4e6e98e3e5ab4d983478c44b950f9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
