@@ -81,12 +81,9 @@ public class PlayerController : MonoBehaviour
 
     private void HandleMovement()
     {
-        // Update the class fields directly.
         moveInput = Input.GetAxis("Horizontal");
         isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         float currentSpeed = isRunning ? moveSpeed * runMultiplier : moveSpeed;
-
-        rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);
 
         float animationSpeed = Mathf.Abs(moveInput) * (isRunning ? runMultiplier : 1f);
         animator.SetFloat("Speed", animationSpeed, dampTime, Time.deltaTime);
@@ -97,25 +94,19 @@ public class PlayerController : MonoBehaviour
             if (!footstepAudioSource.isPlaying)
             {
                 if (isRunning)
-                {
                     PlayRunningSound();
-                }
                 else
-                {
                     PlayWalkingSound();
-                }
             }
         }
-        else
+        else if (footstepAudioSource.isPlaying)
         {
-            if (footstepAudioSource.isPlaying)
-            {
-                footstepAudioSource.Stop();
-            }
+            footstepAudioSource.Stop();
         }
 
         spriteRenderer.flipX = moveInput < 0;
     }
+
 
 
     private void HandleJump()

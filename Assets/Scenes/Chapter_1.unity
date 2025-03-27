@@ -313,6 +313,93 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87afc28f8799c5d4892acfff8a8f20b3, type: 3}
+--- !u!1 &117130527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 117130528}
+  - component: {fileID: 117130529}
+  m_Layer: 0
+  m_Name: 2_0 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &117130528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117130527}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 96.799904, y: -25.137651, z: -0.019261075}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1679934082}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &117130529
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117130527}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 6937817954938267909, guid: dcbddceb2cd09da46a82dee14a8e43c4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.46875, y: 1.78125}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &119027789
 GameObject:
   m_ObjectHideFlags: 0
@@ -48025,6 +48112,62 @@ PrefabInstance:
       propertyPath: npcSound
       value: 
       objectReference: {fileID: 2036244221}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.note
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.speaker
+      value: Mysterious Wanderer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[0]'
+      value: "You don\u2019t seem like an ordinary wanderer. I\u2019ve seen you chasing
+        shadows of the past"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: 'dialogue.sentences.Array.data[1]'
+      value: "These relics scattered among the ruins aren\u2019t mere antiques\u2014they
+        whisper secrets of those who dared to defy fate"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.data[0].choiceText
+      value: The relics?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.data[1].choiceText
+      value: Go ahead?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.data[0].nextDialogue.speaker
+      value: Mysterious Wanderer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.data[1].nextDialogue.speaker
+      value: Mysterious Wanderer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.data[0].nextDialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogue.choices.Array.data[1].nextDialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: 'dialogue.choices.Array.data[0].nextDialogue.sentences.Array.data[0]'
+      value: Each relic carries a piece of our forgotten lore. They speak of a time
+        when the forest was pure and sacred
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: 'dialogue.choices.Array.data[1].nextDialogue.sentences.Array.data[0]'
+      value: "Beware the paths you tread\u2014the forest conceals perils that test
+        the soul as much as the body"
+      objectReference: {fileID: 0}
     - target: {fileID: 6575402051562637631, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
       propertyPath: m_LocalPosition.x
       value: 95.10854
@@ -49375,11 +49518,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5966744108194779747, guid: 38beccd19da69554b9dc448287e4f5a6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 22.849466
       objectReference: {fileID: 0}
     - target: {fileID: 5966744108194779747, guid: 38beccd19da69554b9dc448287e4f5a6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -346.99994
+      value: -410.15463
       objectReference: {fileID: 0}
     - target: {fileID: 5966744108194779747, guid: 38beccd19da69554b9dc448287e4f5a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -52052,6 +52195,7 @@ Transform:
   m_Children:
   - {fileID: 235296220}
   - {fileID: 977581577}
+  - {fileID: 117130528}
   - {fileID: 496910665}
   - {fileID: 825365982}
   m_Father: {fileID: 1768621142}
