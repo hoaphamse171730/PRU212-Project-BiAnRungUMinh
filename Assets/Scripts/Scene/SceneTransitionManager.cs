@@ -72,7 +72,7 @@ public class SceneTransitionManager : MonoBehaviour
         {
             string decision = DecisionManager.SelectedEventID;
 
-            if (decision == "ShowGoodNPC") // Bad ending condition
+            if (decision == "ShowBadNPC") // Bad ending condition
             {
                 currentSceneIndex = System.Array.IndexOf(sceneOrder, "BadEnding");
                 Debug.Log("NextScene: Bad ending condition met. Loading BadEnding.");
@@ -112,9 +112,5 @@ public class SceneTransitionManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    // Update the player score (for example, call this during gameplay)
-    public void UpdatePlayerScore(int score)
-    {
-        playerScore = score;
-    }
+
 }
