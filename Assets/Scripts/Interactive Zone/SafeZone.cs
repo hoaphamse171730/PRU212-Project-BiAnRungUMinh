@@ -10,11 +10,10 @@ public class SafeZone : MonoBehaviour
         // Check if the collider belongs to the player.
         if (other.CompareTag("Player"))
         {
-            // Find the DarknessController in the scene.
             DarknessController darkness = FindObjectOfType<DarknessController>();
             if (darkness != null)
             {
-                // Pass the multiplier to adjust how fast light is restored.
+                // Enable safe mode.
                 darkness.SetSafe(true, safeLightRestoreMultiplier);
             }
         }
@@ -22,16 +21,19 @@ public class SafeZone : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // When the player leaves, reset safe mode.
         if (other.CompareTag("Player"))
         {
+            if (other.transform.parent != null && other.transform.parent.GetComponent<BoatController>() != null)
+            {
+                return;
+            }
+
             DarknessController darkness = FindObjectOfType<DarknessController>();
             if (darkness != null)
             {
-                // Reset safe mode; multiplier will default to 1.
+                // Turn off safe mode.
                 darkness.SetSafe(false);
             }
         }
     }
 }
-

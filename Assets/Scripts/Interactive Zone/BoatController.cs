@@ -39,6 +39,7 @@ public class BoatController : MonoBehaviour
             boardedPlayer.SetParent(transform);
             boardedPlayer.localPosition = boardingOffset;
 
+            // Disable the player's movement controller.
             PlayerController pc = boardedPlayer.GetComponent<PlayerController>();
             if (pc != null)
             {
@@ -46,6 +47,7 @@ public class BoatController : MonoBehaviour
                 Debug.Log("PlayerController disabled.");
             }
 
+            // Force the player's animation to idle.
             Animator playerAnim = boardedPlayer.GetComponent<Animator>();
             if (playerAnim != null)
             {
@@ -55,15 +57,24 @@ public class BoatController : MonoBehaviour
                 playerAnim.Update(0f);
                 Debug.Log("Player animation set to Idle.");
             }
-                Rigidbody2D playerRb = boardedPlayer.GetComponent<Rigidbody2D>();
 
-                if (playerRb != null)
-                {
-                    playerRb.linearVelocity = Vector2.zero;
-                    playerRb.bodyType = RigidbodyType2D.Kinematic;
-                    Debug.Log("Player Rigidbody set to Kinematic.");
-                }
-            
+            // Stop any residual movement.
+            Rigidbody2D playerRb = boardedPlayer.GetComponent<Rigidbody2D>();
+            if (playerRb != null)
+            {
+                playerRb.linearVelocity = Vector2.zero;
+                playerRb.bodyType = RigidbodyType2D.Kinematic;
+                Debug.Log("Player Rigidbody set to Kinematic.");
+            }
+
+            // Protect the player from darkness.
+            DarknessController darkness = FindObjectOfType<DarknessController>();
+            if (darkness != null)
+            {
+                darkness.SetSafe(true, 1f); // Adjust the multiplier as needed.
+                Debug.Log("Darkness set to safe mode on boat.");
+            }
+
             Debug.Log("Player is now parented to the boat and positioned above it.");
         }
     }
@@ -72,22 +83,35 @@ public class BoatController : MonoBehaviour
     {
         if (isBoarded && boardedPlayer != null)
         {
+            // Re-enable the player's controller.
             PlayerController pc = boardedPlayer.GetComponent<PlayerController>();
             if (pc != null)
             {
                 pc.enabled = true;
                 Debug.Log("PlayerController re-enabled.");
             }
+
+            // Revert the player's Rigidbody2D to Dynamic.
             Rigidbody2D playerRb = boardedPlayer.GetComponent<Rigidbody2D>();
             if (playerRb != null)
             {
                 playerRb.bodyType = RigidbodyType2D.Dynamic;
                 Debug.Log("Player Rigidbody set to Dynamic.");
             }
+
+            // Remove the parent so the player is independent again.
             boardedPlayer.SetParent(null);
             boardedPlayer = null;
             isBoarded = false;
             Debug.Log("Player disembarked from the boat.");
+
+            // Turn off safe mode in darkness.
+            DarknessController darkness = FindObjectOfType<DarknessController>();
+            if (darkness != null)
+            {
+                darkness.SetSafe(false);
+                Debug.Log("Darkness safe mode disabled after disembarking.");
+            }
         }
     }
 }
