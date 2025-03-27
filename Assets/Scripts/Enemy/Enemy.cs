@@ -1,4 +1,6 @@
+using Unity.Jobs;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Enemy : MonoBehaviour
 {
@@ -17,7 +19,8 @@ public class Enemy : MonoBehaviour
     private bool isMoving = true;
     private Vector3 startPosition;
     private float lastAttackTime = 0f;
-    
+    public AudioSource audioSource;
+    public AudioClip[] soundClips;
 
     void Start()
     {
@@ -25,12 +28,14 @@ public class Enemy : MonoBehaviour
         startPosition = transform.position; // Store initial position
         enemyVisual = GetComponentInChildren<EnemyVisual>(); // Reference EnemyVisual
         player = null;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         HandleAttack();
         if (isMoving) HandleMove();
+        PlaySound();
     }
 
     private void HandleMove()
@@ -139,9 +144,14 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            //Debug.Log("Stop attacking");
-            isMoving = true;
+            if(isMoving == false)
+                isMoving = true;
         }
     }
 
+    private void PlaySound()
+    {
+        if (audioSource.isPlaying) return;
+        if (isChasing) audioSource.PlayOneShot(soundClips[0], 2f);
+    }
 }

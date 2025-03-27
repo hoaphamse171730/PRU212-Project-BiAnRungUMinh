@@ -18,7 +18,8 @@ public class Boss : MonoBehaviour
     private bool isMoving = true;
     private Vector3 startPosition;
     private float lastAttackTime = 0f;
-
+    public AudioSource audioSource;
+    public AudioClip[] soundClips;
 
     void Start()
     {
@@ -26,12 +27,15 @@ public class Boss : MonoBehaviour
         startPosition = transform.position; // Store initial position
         bossVisual = GetComponentInChildren<BossVisual>(); // Reference EnemyVisual
         player = null;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = true;
     }
 
     void Update()
     {
         HandleAttack();
         if (isMoving) HandleMove();
+        PlaySound();
     }
 
     private void HandleMove()
@@ -102,7 +106,7 @@ public class Boss : MonoBehaviour
             return; // Exit if still on cooldown
         }
 
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, 2f, LayerMask.GetMask("Player"));
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, 3f, LayerMask.GetMask("Player"));
 
         if (hit != null && hit.CompareTag("Player"))
         {
@@ -123,5 +127,11 @@ public class Boss : MonoBehaviour
             Debug.Log("Stop attacking");
             isMoving = true;
         }
+    }
+
+    private void PlaySound()
+    {
+        if (audioSource.isPlaying) return;
+        if (isChasing) audioSource.PlayOneShot(soundClips[0]);
     }
 }
