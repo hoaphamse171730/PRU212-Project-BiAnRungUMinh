@@ -27610,6 +27610,10 @@ PrefabInstance:
         the forest is cursed"
       objectReference: {fileID: 0}
     - target: {fileID: 6760317062779027500, guid: d3cbfc644b0db9341aec1c88bb920b2f, type: 3}
+      propertyPath: dialogue.choices.Array.data[0].eventID
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760317062779027500, guid: d3cbfc644b0db9341aec1c88bb920b2f, type: 3}
       propertyPath: dialogue.choices.Array.data[0].choiceText
       value: Disappearances?
       objectReference: {fileID: 0}
@@ -28201,6 +28205,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: DecisionManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3905237481585286200, guid: 2df6b8f1a41147947a95517bcc10aae9, type: 3}
+      propertyPath: decisionMappings.Array.data[0].eventID
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905237481585286200, guid: 2df6b8f1a41147947a95517bcc10aae9, type: 3}
+      propertyPath: decisionMappings.Array.data[0].decisionEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905237481585286200, guid: 2df6b8f1a41147947a95517bcc10aae9, type: 3}
+      propertyPath: decisionMappings.Array.data[0].decisionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905237481585286200, guid: 2df6b8f1a41147947a95517bcc10aae9, type: 3}
+      propertyPath: decisionMappings.Array.data[0].decisionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 397052766}
+    - target: {fileID: 3905237481585286200, guid: 2df6b8f1a41147947a95517bcc10aae9, type: 3}
+      propertyPath: decisionMappings.Array.data[0].decisionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905237481585286200, guid: 2df6b8f1a41147947a95517bcc10aae9, type: 3}
+      propertyPath: decisionMappings.Array.data[0].decisionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleNotesPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905237481585286200, guid: 2df6b8f1a41147947a95517bcc10aae9, type: 3}
+      propertyPath: decisionMappings.Array.data[0].decisionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: NotesUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3905237481585286200, guid: 2df6b8f1a41147947a95517bcc10aae9, type: 3}
+      propertyPath: decisionMappings.Array.data[0].decisionEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28262,6 +28298,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 7142293256366781602}
+    - target: {fileID: 6337744576850918539, guid: 7b685d3179a8dec4f89c68ce22f085e7, type: 3}
+      propertyPath: dangerDrainMultiplier
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6955020535262519011, guid: 7b685d3179a8dec4f89c68ce22f085e7, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -28722,11 +28762,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6592258632144677710, guid: cf632e10611f68c41a6e5378b73aba29, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 73.68
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6592258632144677710, guid: cf632e10611f68c41a6e5378b73aba29, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.61
+      value: -22.22
       objectReference: {fileID: 0}
     - target: {fileID: 6592258632144677710, guid: cf632e10611f68c41a6e5378b73aba29, type: 3}
       propertyPath: m_LocalPosition.z
