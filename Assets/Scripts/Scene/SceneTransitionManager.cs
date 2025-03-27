@@ -70,7 +70,9 @@ public class SceneTransitionManager : MonoBehaviour
         // If we are at Chapter_4, then decide which ending to load.
         if (currentScene == "Chapter_4")
         {
-            if (playerScore < 50) // Bad ending condition
+            string decision = DecisionManager.SelectedEventID;
+
+            if (decision == "ShowGoodNPC") // Bad ending condition
             {
                 currentSceneIndex = System.Array.IndexOf(sceneOrder, "BadEnding");
                 Debug.Log("NextScene: Bad ending condition met. Loading BadEnding.");
