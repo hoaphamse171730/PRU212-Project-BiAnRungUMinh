@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &612577386693534682
+--- !u!1 &6196193659971000958
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1861384013047711828}
-  - component: {fileID: 5924903025845195399}
+  - component: {fileID: 1604306746327152937}
+  - component: {fileID: 7115433321629312107}
   m_Layer: 0
-  m_Name: DialogueManager
+  m_Name: ManagerLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1861384013047711828
+--- !u!4 &1604306746327152937
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612577386693534682}
+  m_GameObject: {fileID: 6196193659971000958}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 146.43849, y: 73.735245, z: 0.14493339}
+  m_LocalPosition: {x: 133.58759, y: 281.78256, z: -3.6199436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5924903025845195399
+--- !u!114 &7115433321629312107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612577386693534682}
+  m_GameObject: {fileID: 6196193659971000958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443ac2625dd871e4290e270368e8d119, type: 3}
+  m_Script: {fileID: 11500000, guid: 9de3210a55d1d594fbf660e72fd3e330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
-  speakerText: {fileID: 0}
-  decisionPanel: {fileID: 0}
-  decisionContainer: {fileID: 0}
-  decisionButtonPrefab: {fileID: 7144948246356418291, guid: fe4751f6c272f66459cf3431485ba586, type: 3}
+  decisionManagerPrefab: {fileID: 1697015832182758679, guid: 2df6b8f1a41147947a95517bcc10aae9, type: 3}
+  dialogueManagerPrefab: {fileID: 612577386693534682, guid: 0a1021164f5ab6c4a951dd8b34c23992, type: 3}
+  notesUIPrefab: {fileID: 7632617637486817049, guid: 7981177579f6741449636b6ee316745c, type: 3}
+  notesManagerPrefab: {fileID: 6499499094789716134, guid: dcc92635fd62d4c4195de481abda00df, type: 3}

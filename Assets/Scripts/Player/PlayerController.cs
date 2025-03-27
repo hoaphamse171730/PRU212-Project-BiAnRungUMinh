@@ -171,13 +171,17 @@ public class PlayerController : MonoBehaviour
         {
             IsDead = true;
             animator.SetTrigger("Dead");
+
+            GameSession.LastScene = SceneManager.GetActiveScene().name;
+
             ClearPersistentManagers();
 
             rb.linearVelocity = Vector2.zero;
+
             SceneManager.LoadScene("DeadScene");
-            //StartCoroutine(RespawnAfterDelay(respawnDelay));
         }
     }
+
 
     private IEnumerator RespawnAfterDelay(float delay)
     {

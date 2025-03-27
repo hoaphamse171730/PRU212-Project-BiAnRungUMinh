@@ -9,27 +9,24 @@ public class DeadMenuController : MonoBehaviour
 
     void Start()
     {
-        // Ensure all references are assigned in the Inspector
         if (restartButton == null || returnButton == null)
         {
-            Debug.LogError("One or more button or panel references are missing in MainMenuScript!");
+            Debug.LogError("One or more button references are missing!");
             return;
         }
 
-        // Add listeners to buttons
         restartButton.onClick.AddListener(OnRestartGameClicked);
         returnButton.onClick.AddListener(OnReturnMenuClicked);
     }
 
     void OnRestartGameClicked()
     {
-        // Load the Prologue scene
-        SceneManager.LoadScene("Prologue");
+        string sceneToLoad = string.IsNullOrEmpty(GameSession.LastScene) ? "Prologue" : GameSession.LastScene;
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     void OnReturnMenuClicked()
     {
-        // Load the Main Menu scene
         SceneManager.LoadScene("MainMenu");
     }
 }
