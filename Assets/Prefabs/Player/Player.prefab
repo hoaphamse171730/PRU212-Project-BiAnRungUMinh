@@ -210,6 +210,9 @@ MonoBehaviour:
   walkingClip: {fileID: 8300000, guid: d91febba281eee94a97cda39cc568468, type: 3}
   runningClip: {fileID: 8300000, guid: 267949a29758e6e42af32ddc27654da2, type: 3}
   stepInterval: 1
+  idleBreathClip: {fileID: 8300000, guid: 25db24652f5109944bfc0c125e6d0d05, type: 3}
+  heavyBreathClip: {fileID: 8300000, guid: b4651cfab1a723f4f811c967b8f87a7d, type: 3}
+  breathInterval: 3
 --- !u!114 &1158225550523779452
 MonoBehaviour:
   m_ObjectHideFlags: 0

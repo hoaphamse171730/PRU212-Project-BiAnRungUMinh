@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
         get { return IsDead; }
     }
 
-
-
     private Animator animator;
     private Rigidbody2D rb;
     private bool isGrounded = false;
@@ -27,10 +25,16 @@ public class PlayerController : MonoBehaviour
 
     private AudioSource footstepAudioSource;
     [Header("Audio Config")]
-    [SerializeField] private AudioClip walkingClip;  // Âm thanh khi đi bộ
-    [SerializeField] private AudioClip runningClip;  // Âm thanh khi chạy
+    [SerializeField] private AudioClip walkingClip;
+    [SerializeField] private AudioClip runningClip;
     [SerializeField] private float stepInterval = 0.5f;
     private float stepTimer;
+
+    [Header("Breathing Config")]
+    [SerializeField] private AudioClip idleBreathClip;
+    [SerializeField] private AudioClip heavyBreathClip;
+    [SerializeField] private float breathInterval = 3f;
+    private float breathTimer;
 
     private void Start()
     {
@@ -48,6 +52,7 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleJump();
         HandleDamageInput();
+        HandleBreathing();
     }
 
     private void HandleMovement()
@@ -62,7 +67,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Speed", animationSpeed, dampTime, Time.deltaTime);
         animator.SetBool("isRunning", isRunning && Mathf.Abs(moveInput) > 0.1f);
 
-        // Phát âm thanh khi nhân vật di chuyển
         if (Mathf.Abs(moveInput) > 0.1f && isGrounded)
         {
             if (!footstepAudioSource.isPlaying)
@@ -79,14 +83,12 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            // Dừng âm thanh khi nhân vật đứng yên
             if (footstepAudioSource.isPlaying)
             {
                 footstepAudioSource.Stop();
             }
         }
 
-        // Lật hướng sprite dựa trên hướng di chuyển
         spriteRenderer.flipX = moveInput < 0;
     }
 
@@ -162,6 +164,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void HandleBreathing()
+    {
+        breathTimer += Time.deltaTime;
 
-    
+        bool isMoving = Mathf.Abs(rb.linearVelocity.x) > 0.1f;
+        bool isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
+
+        if (!isMoving)
+        {
+            if (breathTimer >= breathInterval && idleBreathClip != null)
+            {
+                footstepAudioSource.clip = idleBreathClip;
+                footstepAudioSource.Play();
+                breathTimer = 0f;
+            }
+        }
+        else if (isRunning)
+        {
+            if (breathTimer >= breathInterval / 2 && heavyBreathClip != null)
+            {
+                footstepAudioSource.clip = heavyBreathClip;
+                footstepAudioSource.Play();
+                breathTimer = 0f;
+            }
+        }
+    }
 }

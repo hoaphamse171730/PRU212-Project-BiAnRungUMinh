@@ -90,7 +90,7 @@ public class DarknessController : MonoBehaviour
         if (currentLightRadius <= minLightRadius)
         {
             PlayerController pc = player.GetComponent<PlayerController>();
-            if (pc != null && !pc.IsDead)
+            if (pc != null && !pc.isDead)
 
             {
                 pc.TakeDamage(9999); // Enough to kill the player.
