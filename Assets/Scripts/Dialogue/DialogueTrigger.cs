@@ -1,11 +1,12 @@
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField] private Dialogue dialogue;
     [SerializeField] private GameObject talkPromptUI;
-    [SerializeField] private AudioSource audioSource;   
-    [SerializeField] private AudioClip dialogueSound;     
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip dialogueSound;
 
     private void Start()
     {
@@ -26,13 +27,10 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
 
+        // With [RequireComponent] this should never be null, but it's good to double-check.
         if (audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
-            if (audioSource == null)
-            {
-                Debug.LogWarning("No AudioSource found on this GameObject. Please assign one in the Inspector.");
-            }
         }
     }
 

@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
         moveInput = Input.GetAxis("Horizontal");
         isRunning = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
         float currentSpeed = isRunning ? moveSpeed * runMultiplier : moveSpeed;
+        
+        rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);
 
         float animationSpeed = Mathf.Abs(moveInput) * (isRunning ? runMultiplier : 1f);
         animator.SetFloat("Speed", animationSpeed, dampTime, Time.deltaTime);

@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class NPCSoundTrigger : MonoBehaviour
 {
-    public Transform player;         // Kéo thả Player vào đây trong Inspector
-    public Transform npc;            // Kéo thả NPC vào đây trong Inspector
-    public AudioSource npcSound;     // Kéo thả AudioSource vào đây trong Inspector
+    public Transform player;         
+    public Transform npc;           
+    public AudioSource npcSound;     
     public float triggerDistance = 5f;
 
     private bool isPlaying = false;
@@ -31,7 +31,7 @@ public class NPCSoundTrigger : MonoBehaviour
     private void Update()
     {
         float distance = Vector2.Distance(player.position, npc.position);
-        Debug.Log($"Khoảng cách đến NPC: {distance} | triggerDistance: {triggerDistance}");
+        //Debug.Log($"Khoảng cách đến NPC: {distance} | triggerDistance: {triggerDistance}");
 
         if (distance <= triggerDistance)
         {

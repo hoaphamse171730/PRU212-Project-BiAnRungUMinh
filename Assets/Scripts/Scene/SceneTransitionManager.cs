@@ -87,7 +87,7 @@ public class SceneTransitionManager : MonoBehaviour
                 Debug.Log("NextScene: BUG when find decision.");
             }
         }
-        // Otherwise, simply move to the next scene in the order.
+
         else if (currentSceneIndex < sceneOrder.Length - 1)
         {
             currentSceneIndex++;
