@@ -17516,6 +17516,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogueSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c01a60548fb07344cb43f9f7b3473687, type: 3}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
       propertyPath: dialogue.speaker
       value: Guardian of Redemption
       objectReference: {fileID: 0}
@@ -17783,7 +17787,7 @@ MonoBehaviour:
       eventID: 
   talkPromptUI: {fileID: 0}
   audioSource: {fileID: 0}
-  dialogueSound: {fileID: 0}
+  dialogueSound: {fileID: 8300000, guid: c01a60548fb07344cb43f9f7b3473687, type: 3}
 --- !u!95 &1210702238
 Animator:
   serializedVersion: 7

@@ -637,6 +637,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 926703279579566482, guid: 5fe395377f00d60448dc2a6ffe8062b9, type: 3}
+      propertyPath: dialogueSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c01a60548fb07344cb43f9f7b3473687, type: 3}
+    - target: {fileID: 926703279579566482, guid: 5fe395377f00d60448dc2a6ffe8062b9, type: 3}
       propertyPath: dialogue.sentences.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -930,6 +934,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1984521788}
     - target: {fileID: 831056393076670702, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
+      propertyPath: dialogueSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c01a60548fb07344cb43f9f7b3473687, type: 3}
+    - target: {fileID: 831056393076670702, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
       propertyPath: dialogue.speaker
       value: Village Child
       objectReference: {fileID: 0}
@@ -1193,6 +1201,10 @@ PrefabInstance:
       propertyPath: talkPromptUI
       value: 
       objectReference: {fileID: 1984521788}
+    - target: {fileID: 3860205188570785776, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
+      propertyPath: dialogueSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c01a60548fb07344cb43f9f7b3473687, type: 3}
     - target: {fileID: 3860205188570785776, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
       propertyPath: dialogue.sentences.Array.size
       value: 1
@@ -30256,6 +30268,10 @@ PrefabInstance:
       value: NPC5
       objectReference: {fileID: 0}
     - target: {fileID: 7949752861780070730, guid: 980364dc54f9303438c3e4932c24e343, type: 3}
+      propertyPath: dialogueSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c01a60548fb07344cb43f9f7b3473687, type: 3}
+    - target: {fileID: 7949752861780070730, guid: 980364dc54f9303438c3e4932c24e343, type: 3}
       propertyPath: dialogue.sentences.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -30345,6 +30361,10 @@ PrefabInstance:
       propertyPath: dialogue.note
       value: Curse forest?
       objectReference: {fileID: 0}
+    - target: {fileID: 6760317062779027500, guid: d3cbfc644b0db9341aec1c88bb920b2f, type: 3}
+      propertyPath: dialogueSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c01a60548fb07344cb43f9f7b3473687, type: 3}
     - target: {fileID: 6760317062779027500, guid: d3cbfc644b0db9341aec1c88bb920b2f, type: 3}
       propertyPath: dialogue.choices.Array.size
       value: 2
@@ -30954,6 +30974,10 @@ PrefabInstance:
       propertyPath: dialogue.note
       value: KIDNAPPING?
       objectReference: {fileID: 0}
+    - target: {fileID: 6796838465988081724, guid: 18bfcafdc41920a4a851a47a60edee03, type: 3}
+      propertyPath: dialogueSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c01a60548fb07344cb43f9f7b3473687, type: 3}
     - target: {fileID: 6796838465988081724, guid: 18bfcafdc41920a4a851a47a60edee03, type: 3}
       propertyPath: dialogue.choices.Array.size
       value: 1

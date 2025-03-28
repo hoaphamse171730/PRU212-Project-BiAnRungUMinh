@@ -50635,6 +50635,18 @@ PrefabInstance:
       propertyPath: aggroRange
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6596744129908333977, guid: 6c46a4cb606610140b4464d3a680b098, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596744129908333977, guid: 6c46a4cb606610140b4464d3a680b098, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596744129908333977, guid: 6c46a4cb606610140b4464d3a680b098, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -56514,6 +56526,10 @@ PrefabInstance:
       propertyPath: dialogue.note
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
+      propertyPath: dialogueSound
+      value: 
+      objectReference: {fileID: 8300000, guid: c01a60548fb07344cb43f9f7b3473687, type: 3}
     - target: {fileID: 2071308293320329002, guid: 2fa1e7d361f808c4a957076b68ae0155, type: 3}
       propertyPath: dialogue.speaker
       value: Mysterious Wanderer
