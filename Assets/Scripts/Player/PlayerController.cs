@@ -75,19 +75,7 @@ public class PlayerController : MonoBehaviour
 
         currentHealth = maxHealth;
 
-        // Find spawn point by tag if not assigned in the Inspector.
-        if (spawnPoint == null)
-        {
-            GameObject sp = GameObject.FindGameObjectWithTag("SpawnPoint");
-            if (sp != null)
-            {
-                spawnPoint = sp.transform;
-            }
-            else
-            {
-                Debug.LogWarning("Spawn point not found in scene. Please assign spawnPoint manually.");
-            }
-        }
+
     }
 
     private void Update()
