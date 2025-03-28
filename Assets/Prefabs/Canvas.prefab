@@ -217,10 +217,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4735477339976589979}
     m_Modifications:
-    - target: {fileID: 2916435597256870322, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5998187211098399583, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -304,6 +300,10 @@ PrefabInstance:
     - target: {fileID: 7874271723626780042, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
       propertyPath: m_Name
       value: TalkPrompt
+      objectReference: {fileID: 0}
+    - target: {fileID: 7874271723626780042, guid: 300d1e4e0171a1d4cae903791182b73a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

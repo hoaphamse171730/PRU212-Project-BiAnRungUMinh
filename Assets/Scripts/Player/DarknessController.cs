@@ -56,7 +56,7 @@ public class DarknessController : MonoBehaviour
         }
         currentLightRadius = Mathf.Clamp(currentLightRadius, minLightRadius, maxLightRadius);
 
-        Debug.Log($"[Darkness] isSafe: {isSafe}, currentLightRadius: {currentLightRadius}");
+        //Debug.Log($"[Darkness] isSafe: {isSafe}, currentLightRadius: {currentLightRadius}");
 
         if (darknessLight != null)
         {
