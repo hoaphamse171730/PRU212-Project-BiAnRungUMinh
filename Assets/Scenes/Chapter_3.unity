@@ -402,6 +402,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603382831}
     m_Modifications:
+    - target: {fileID: 7214284128921094405, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8779272855855340256, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
       propertyPath: m_Name
       value: NPC8 (2)
@@ -525,6 +529,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC6
       objectReference: {fileID: 0}
+    - target: {fileID: 2571672318495415890, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5192826126451514223, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.32
@@ -583,6 +591,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603382831}
     m_Modifications:
+    - target: {fileID: 7214284128921094405, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8779272855855340256, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
       propertyPath: m_Name
       value: NPC8
@@ -1751,6 +1763,10 @@ PrefabInstance:
     - target: {fileID: 1565294825429371301, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
       propertyPath: m_Name
       value: NPC6 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571672318495415890, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5192826126451514223, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48236,6 +48252,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603382831}
     m_Modifications:
+    - target: {fileID: 7214284128921094405, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8779272855855340256, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
       propertyPath: m_Name
       value: NPC8 (1)
@@ -48537,6 +48557,10 @@ PrefabInstance:
     - target: {fileID: 1565294825429371301, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
       propertyPath: m_Name
       value: NPC6 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571672318495415890, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5192826126451514223, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
       propertyPath: m_LocalPosition.x
