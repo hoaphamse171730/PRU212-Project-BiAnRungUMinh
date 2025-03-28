@@ -22,6 +22,10 @@ public class Enemy : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] soundClips;
 
+    [Header("Player Hurt Audio")]
+    [Tooltip("Assign one or more audio clips to play when the enemy hits the player.")]
+    [SerializeField] private AudioClip[] playerHurtClips;
+
     void Start()
     {
         startX = transform.position.x;
@@ -44,18 +48,18 @@ public class Enemy : MonoBehaviour
 
         if (isChasing)
         {
-            speed = 5f; //run speed
+            speed = 5f; // Run speed
             ChasePlayer();
         }
-            
         else if (isReturning)
+        {
             ReturnToStart(); // Move back to start position
+        }
         else
         {
-            speed = 2f;//roam speed
+            speed = 2f; // Roam speed
             Roam();
         }
-            
     }
 
     void Roam()
@@ -139,12 +143,20 @@ public class Enemy : MonoBehaviour
             if (playerController != null)
             {
                 playerController.TakeDamage(damage);
+
+                // Play additional hurt audio for the player hit
+                if (playerHurtClips != null && playerHurtClips.Length > 0)
+                {
+                    int clipIndex = Random.Range(0, playerHurtClips.Length);
+                    audioSource.PlayOneShot(playerHurtClips[clipIndex], 1f);
+                }
+
                 lastAttackTime = Time.time; // Reset cooldown
             }
         }
         else
         {
-            if(isMoving == false)
+            if (!isMoving)
                 isMoving = true;
         }
     }

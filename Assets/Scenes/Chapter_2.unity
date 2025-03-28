@@ -837,6 +837,7 @@ GameObject:
   - component: {fileID: 360797903}
   - component: {fileID: 360797902}
   - component: {fileID: 360797901}
+  - component: {fileID: 360797904}
   m_Layer: 0
   m_Name: 2_0
   m_TagString: Untagged
@@ -994,6 +995,103 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   safeLightRestoreMultiplier: 1
+--- !u!82 &360797904
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360797898}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &383750711
 GameObject:
   m_ObjectHideFlags: 0
@@ -46303,6 +46401,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 603382831}
     m_Modifications:
     - target: {fileID: 831056393076670702, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
+      propertyPath: dialogueSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 533d1a6848b7a53429b5d378ca84a0c1, type: 3}
+    - target: {fileID: 831056393076670702, guid: b74d9bee65d3c454b8e3673f2902e769, type: 3}
       propertyPath: dialogue.speaker
       value: Girl Soul
       objectReference: {fileID: 0}
@@ -49107,11 +49209,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5637684133103536285, guid: 71e849bbad7d2ec4bb7005945556335d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.7539287
+      value: 5.402142
       objectReference: {fileID: 0}
     - target: {fileID: 5637684133103536285, guid: 71e849bbad7d2ec4bb7005945556335d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14.736767
+      value: -21.152924
       objectReference: {fileID: 0}
     - target: {fileID: 5637684133103536285, guid: 71e849bbad7d2ec4bb7005945556335d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -49702,7 +49804,7 @@ PrefabInstance:
     - target: {fileID: 3860205188570785776, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
       propertyPath: dialogueSound
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 533d1a6848b7a53429b5d378ca84a0c1, type: 3}
     - target: {fileID: 3860205188570785776, guid: 367ffb46324ada241a4b50c92778e6c3, type: 3}
       propertyPath: dialogue.speaker
       value: Boy Soul

@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 3721976857482143611}
   - component: {fileID: 1357349337477839201}
   - component: {fileID: 7144948246356418291}
+  - component: {fileID: 1363248730498831853}
   m_Layer: 5
   m_Name: DecisionButton
   m_TagString: Untagged
@@ -199,4 +200,30 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1357349337477839201}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1363248730498831853}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1363248730498831853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428800809180493065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912bca2a20fe588458eedff607a1beab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClickClip: {fileID: 8300000, guid: 58673f34aa0edfc40bdc1ed26a1e1dc7, type: 3}
+  volume: 1

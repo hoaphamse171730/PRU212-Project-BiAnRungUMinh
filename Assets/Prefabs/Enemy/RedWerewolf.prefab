@@ -121,6 +121,8 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   soundClips:
   - {fileID: 8300000, guid: fd9aaebcaa315b041bd1f432a9b2576e, type: 3}
+  playerHurtClips:
+  - {fileID: 8300000, guid: 7e09415465c9e3e4d82c8bc0f183da1f, type: 3}
 --- !u!82 &6705531869311191514
 AudioSource:
   m_ObjectHideFlags: 0
